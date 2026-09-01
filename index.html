@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUENTE — The Cartagena–Baylor Medical English Exchange</title>
+<meta name="description" content="PUENTE: a pilot partnership between ACAMC (Universidad de Cartagena) and SACNAS (Baylor University) for medical English practice — partner matching, weekly OSCE and conversation materials, meet links, and proficiency surveys. Sept 14 – Nov 14, 2026.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M4 30 Q20 8 36 30' fill='none' stroke='%23C9A227' stroke-width='3'/%3E%3Cpath d='M4 30h32' stroke='%231E7A4A' stroke-width='3'/%3E%3Cpath d='M12 30v-8M20 30v-11M28 30v-8' stroke='%231E7A4A' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+img{max-width:100%}
+:root{
+  --bg:#F7F9F8; --surface:#FFFFFF; --surface2:#EFF3F1; --ink:#1F2A33; --muted:#5B6B77;
+  --border:#DBE3DF; --border2:#C8D4CE;
+  --green:#14532D; --green2:#1E7A4A; --green-soft:#E4F3EA; --green-ink:#0F3D22;
+  --gold:#C9A227; --gold-deep:#9A7B1C; --gold-soft:#F5ECD3;
+  --orange:#C4661F; --orange-soft:#FBEDDF; --orange-ink:#8A4512;
+  --slate-chip:#E7EDF1; --shadow:0 1px 2px rgba(31,42,51,.06),0 6px 18px rgba(31,42,51,.07);
+  --focus:#1E7A4A;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F161D; --surface:#18222B; --surface2:#1F2B35; --ink:#E7EDF1; --muted:#93A4B0;
+    --border:#2A3843; --border2:#37474F;
+    --green:#57C08A; --green2:#46B67C; --green-soft:#15352A; --green-ink:#A9E5C6;
+    --gold:#D9B44A; --gold-deep:#E5C767; --gold-soft:#33301E;
+    --orange:#E08A45; --orange-soft:#3A2818; --orange-ink:#F0B98A;
+    --slate-chip:#243440; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+    --focus:#57C08A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F161D; --surface:#18222B; --surface2:#1F2B35; --ink:#E7EDF1; --muted:#93A4B0;
+  --border:#2A3843; --border2:#37474F;
+  --green:#57C08A; --green2:#46B67C; --green-soft:#15352A; --green-ink:#A9E5C6;
+  --gold:#D9B44A; --gold-deep:#E5C767; --gold-soft:#33301E;
+  --orange:#E08A45; --orange-soft:#3A2818; --orange-ink:#F0B98A;
+  --slate-chip:#243440; --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 18px rgba(0,0,0,.35);
+  --focus:#57C08A;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15.5px;line-height:1.6}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;line-height:1.2;text-wrap:balance;margin:0 0 .5em}
+h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:700}
+h2{font-size:1.55rem;font-weight:600}
+h3{font-size:1.18rem;font-weight:600}
+p{margin:.35em 0 .9em}
+a{color:var(--green2)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"Public Sans";font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.4rem}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:8px 10px;max-width:100%}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+label{font-size:.8rem;font-weight:600;color:var(--muted);display:block;margin-bottom:3px}
+.field{display:flex;flex-direction:column;min-width:0}
+/* nav */
+.topbar{position:sticky;top:0;z-index:40;background:var(--surface);border-bottom:1px solid var(--border);box-shadow:0 1px 0 rgba(31,42,51,.03)}
+.topbar .wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none;color:var(--ink)}
+.brand b{font-family:"Fraunces",serif;font-size:1.25rem;letter-spacing:.02em}
+.brand small{color:var(--muted);font-size:.7rem;display:block;line-height:1.1}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:1px solid transparent;background:none;color:var(--muted);padding:7px 12px;border-radius:999px;font-weight:600;font-size:.86rem;white-space:nowrap}
+.tab:hover{background:var(--surface2);color:var(--ink)}
+.tab.active{background:var(--green);color:#FFFFFF}
+:root[data-theme="dark"] .tab.active{color:#0F161D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tab.active{color:#0F161D}}
+/* page sections */
+.page{display:none;padding:34px 0 70px}
+.page.visible{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow)}
+.card+.card{margin-top:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:7px;border-radius:9px;border:1px solid var(--border2);background:var(--surface);color:var(--ink);padding:8px 15px;font-weight:600;font-size:.88rem;text-decoration:none}
+.btn:hover{border-color:var(--green2)}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#0F161D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0F161D}}
+.btn.primary:hover{background:var(--green2);border-color:var(--green2)}
+.btn.gold{background:var(--gold-soft);border-color:var(--gold);color:var(--ink)}
+.btn.small{padding:5px 11px;font-size:.8rem}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+/* status chips */
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 11px;font-size:.78rem;font-weight:700}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.chip.green{background:var(--green-soft);color:var(--green-ink)}
+.chip.orange{background:var(--orange-soft);color:var(--orange-ink)}
+.chip.slate{background:var(--slate-chip);color:var(--muted)}
+.chip.goldc{background:var(--gold-soft);color:var(--gold-deep)}
+/* hero */
+.hero{padding:56px 0 30px;text-align:center}
+.hero .bridge{margin:0 auto 18px;max-width:560px;width:100%;height:auto;display:block}
+.hero .tag{font-size:1.05rem;color:var(--muted);max-width:46ch;margin:0 auto 4px}
+.hero .clubs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
+.heroRule{width:120px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--green2),var(--gold));margin:0 auto 20px}
+.statRow{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 20px;min-width:130px}
+.stat b{font-family:"Fraunces",serif;font-size:1.5rem;display:block;color:var(--green)}
+.stat span{font-size:.75rem;color:var(--muted);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+/* pair cards */
+.pairCard{border:1px solid var(--border);border-radius:12px;padding:16px;background:var(--surface);margin-top:12px}
+.pairHead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pairNames{font-weight:700;font-size:1.02rem}
+.pairNames.matched{color:var(--green-ink);background:var(--green-soft);padding:2px 10px;border-radius:8px}
+.pairNames.mismatch{color:var(--orange-ink);background:var(--orange-soft);padding:2px 10px;border-radius:8px}
+.pairNames.pending{color:var(--muted)}
+.sideBox{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--surface2)}
+.sideBox h4{margin:0 0 8px;font-family:"Public Sans";font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.formRow{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.formRow .field{flex:1 1 140px}
+.weekTable{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:10px}
+.weekTable th{text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--border)}
+.weekTable td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+.tableScroll{overflow-x:auto}
+.note{font-size:.82rem;color:var(--muted)}
+.banner{border:1px solid var(--gold);background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:.86rem;margin-bottom:16px}
+.banner.hide{display:none}
+.commentItem{border-bottom:1px solid var(--border);padding:12px 0}
+.commentItem:last-child{border-bottom:none}
+.commentMeta{font-size:.78rem;color:var(--muted);margin-bottom:2px}
+.matBody{border:1px solid var(--border);border-radius:10px;padding:18px 20px;background:var(--surface2);margin-top:12px}
+.matBody h4{margin:1em 0 .3em;font-family:"Public Sans";font-weight:700;font-size:.95rem;color:var(--green)}
+.matBody h4:first-child{margin-top:0}
+.matBody ul{margin:.2em 0 .8em;padding-left:1.2em}
+.matBody li{margin:.25em 0}
+.benchItem::marker{color:var(--gold-deep)}
+.roleToggle{display:inline-flex;border:1px solid var(--border2);border-radius:999px;overflow:hidden}
+.roleToggle button{border:none;background:none;padding:6px 14px;font-weight:600;font-size:.82rem;color:var(--muted)}
+.roleToggle button.on{background:var(--green);color:#fff}
+:root[data-theme="dark"] .roleToggle button.on{color:#0F161D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .roleToggle button.on{color:#0F161D}}
+.rubric td,.rubric th{border:1px solid var(--border);padding:8px 10px;font-size:.84rem;vertical-align:top}
+.rubric{border-collapse:collapse;width:100%}
+.rubric th{background:var(--surface2);text-align:left}
+.stepList{counter-reset:st;list-style:none;padding:0;margin:0}
+.stepList li{position:relative;padding:0 0 18px 46px}
+.stepList li::before{counter-increment:st;content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--green-soft);color:var(--green-ink);font-weight:700;display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif}
+.stepList li::after{content:"";position:absolute;left:14px;top:34px;bottom:2px;width:2px;background:var(--border)}
+.stepList li:last-child::after{display:none}
+.ratingRow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin:2px 0 10px}
+.ratingRow .rlab{flex:1 1 200px;font-size:.88rem;font-weight:600}
+.ratingRow .opts{display:flex;gap:4px}
+.ratingRow .opts button{width:34px;height:34px;border-radius:8px;border:1px solid var(--border2);background:var(--surface);font-weight:700}
+.ratingRow .opts button.sel{background:var(--green);border-color:var(--green);color:#fff}
+:root[data-theme="dark"] .ratingRow .opts button.sel{color:#0F161D}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ratingRow .opts button.sel{color:#0F161D}}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:.86rem;font-weight:600;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.show{opacity:1}
+footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--muted);font-size:.8rem;text-align:center}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
+.dl{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.emptyBox{border:1.5px dashed var(--border2);border-radius:12px;padding:26px;text-align:center;color:var(--muted);margin-top:12px}
+.crest{display:inline-block}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="#home" data-nav="home">
+    <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 30 Q20 8 36 30" fill="none" stroke="#C9A227" stroke-width="3"/><path d="M4 30h32" stroke="#1E7A4A" stroke-width="3"/><path d="M12 30v-8M20 30v-11M28 30v-8" stroke="#1E7A4A" stroke-width="2.2"/></svg>
+    <span><b>PUENTE</b><small>Cartagena ⇄ Baylor</small></span>
+  </a>
+  <nav class="tabs" aria-label="Pages">
+    <button class="tab" data-nav="home">Home</button>
+    <button class="tab" data-nav="instructions">Instructions</button>
+    <button class="tab" data-nav="matching">Partner Matching</button>
+    <button class="tab" data-nav="materials">Weekly Materials</button>
+    <button class="tab" data-nav="meet">Meet Links</button>
+    <button class="tab" data-nav="survey">Proficiency Survey</button>
+    <button class="tab" data-nav="feedback">Comments</button>
+  </nav>
+</div></div>
+
+<div id="liveBanner" class="banner hide wrap" style="margin-top:14px"></div>
+
+<!-- ============ HOME ============ -->
+<section class="page" id="page-home">
+  <div class="wrap hero">
+    <div class="eyebrow">A pilot partnership · Sept 14 – Nov 14, 2026</div>
+    <h1>PUENTE</h1>
+    <p class="tag">The Cartagena–Baylor Medical English Exchange. One bridge, two campuses: weekly conversation partners preparing future physicians for the OET, the USMLE, and everything in between.</p>
+    <div class="heroRule"></div>
+    <svg class="bridge" viewBox="0 0 560 150" role="img" aria-label="Emblems of Universidad de Cartagena and Baylor University joined by a bridge">
+      <g class="crest">
+        <circle cx="70" cy="70" r="52" fill="none" stroke="#C9A227" stroke-width="3"/>
+        <circle cx="70" cy="70" r="45" fill="#14532D"/>
+        <text x="70" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#F5ECD3">UdeC</text>
+        <text x="70" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#E4F3EA">EST. 1827</text>
+        <text x="70" y="140" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#8A8F94">Universidad de Cartagena</text>
+      </g>
+      <g class="crest">
+        <circle cx="490" cy="70" r="52" fill="none" stroke="#C9A227" stroke-width="3"/>
+        <circle cx="490" cy="70" r="45" fill="#154734"/>
+        <text x="490" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="bold" fill="#FFB81C">BU</text>
+        <text x="490" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#E4F3EA">EST. 1845</text>
+        <text x="490" y="140" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="600" fill="#8A8F94">Baylor University</text>
+      </g>
+      <path d="M128 82 Q280 10 432 82" fill="none" stroke="#C9A227" stroke-width="4"/>
+      <path d="M128 92 L432 92" stroke="#1E7A4A" stroke-width="4"/>
+      <path d="M180 92v-23M230 92v-33M280 92v-38M330 92v-33M380 92v-23" stroke="#1E7A4A" stroke-width="2.5"/>
+    </svg>
+    <div class="clubs">
+      <span class="chip goldc">ACAMC · Facultad de Medicina, Universidad de Cartagena</span>
+      <span class="chip green">SACNAS · Baylor University</span>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <button class="btn primary" data-nav="matching">Find your partner →</button>
+      <button class="btn" data-nav="instructions">How it works</button>
+    </div>
+    <div class="statRow">
+      <div class="stat"><b>9</b><span>weeks</span></div>
+      <div class="stat"><b>2</b><span>tracks</span></div>
+      <div class="stat"><b>1×</b><span>meet / week</span></div>
+      <div class="stat"><b id="statPairs">0</b><span>partnerships</span></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:40px">
+    <div class="grid2">
+      <div class="card">
+        <div class="eyebrow">Track A</div>
+        <h3>Clinical English</h3>
+        <p>OSCE-style patient encounters, one per week. The Baylor partner runs the full AI-generated case guideline on a split screen; the Cartagena partner works only from the interaction benchmarks — just like a real exam station. Built for the path to ECFMG certification: OET Medicine and the USMLE Steps.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Track B</div>
+        <h3>Conversational English</h3>
+        <p>Cultural exchange, daily life, ambitions, and personal history — with weekly prompt sets engineered to stretch a different grammar pattern and speech style every session. Fluency first, perfection later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTRUCTIONS ============ -->
+<section class="page" id="page-instructions">
+  <div class="wrap">
+    <div class="eyebrow">Cómo funciona · How it works</div>
+    <h2>The PUENTE Playbook</h2>
+    <p style="max-width:68ch">A pilot cooperation between <b>ACAMC</b> (Facultad de Medicina, Universidad de Cartagena) and <b>SACNAS</b> (Baylor University) to build English proficiency for the ECFMG pathway — the OET Medicine exam and the USMLE Steps — through weekly one-to-one practice, <b>September 14 to November 14, 2026</b>.</p>
+
+    <div class="card">
+      <h3>Getting started</h3>
+      <ol class="stepList" style="margin-top:14px">
+        <li><b>Choose your track.</b> Cartagena students pick <i>Clinical English</i> (OSCE-style patient encounters) or <i>Conversational English</i> (cultural exchange and everyday fluency). You keep the same track for the whole pilot.</li>
+        <li><b>Register on the Partner Matching page.</b> Add your name and email under your school and track. Partners are <b>set for the full nine weeks</b> — no weekly rotation — so you build rapport and can track real progress.</li>
+        <li><b>Propose a meeting time each week.</b> Both partners pick a date and a time slot from the template menus (no free-typing, so there are never punctuation or format mix-ups). When both selections are identical the partnership row turns <span class="chip green"><span class="dot"></span>Confirmed</span>; if they differ it turns <span class="chip orange"><span class="dot"></span>Different times</span> until you adjust.</li>
+        <li><b>Meet once a week on Google Meet</b> (45–60 minutes). Your pair's Meet link lives on the Meet Links page — one click to join. Aim to confirm your slot by Friday of the week before.</li>
+        <li><b>Rate and reflect.</b> After weeks 1, 5, and 9, each partner completes the Proficiency Survey about the other. That gives the program a baseline, a midpoint, and a final picture of growth.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Clinical track · session protocol</h3>
+      <p class="note">Materials for each week are on the Weekly Materials page. Every case is AI-generated and reviewed for the OET Medicine / USMLE clinical-communication style.</p>
+      <ol class="stepList" style="margin-top:14px">
+        <li><b>Before the call:</b> the <b>Baylor (SACNAS)</b> partner downloads the week's <i>Full Guideline</i> (narrative, explanations, answers, benchmark highlights). The <b>Cartagena (ACAMC)</b> partner downloads <i>only the Benchmark Sheet</i> — the checklist of things to accomplish in the encounter.</li>
+        <li><b>Split screen:</b> on the call, the Baylor partner keeps the guideline open beside the video. The Cartagena partner keeps only the benchmarks visible, and opens the full narrative <i>only if truly stuck</i>. The surprise is the point — it mirrors a real OSCE station.</li>
+        <li><b>Role-play (≈25 min):</b> the Baylor partner plays the patient using the narrative script; the Cartagena partner leads the encounter in English, working through the benchmarks.</li>
+        <li><b>Debrief (≈15 min):</b> go benchmark by benchmark. The Baylor partner shares the model phrases and answers from the guideline; both flag pronunciation, vocabulary, and phrasing to practice.</li>
+        <li><b>Wrap (≈5 min):</b> agree next week's slot and enter it on the Partner Matching page before you hang up.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>Conversational track · session protocol</h3>
+      <p>Download the week's prompt set. Take turns asking; follow tangents — the prompts are a springboard, not a script. Each set names a <b>grammar focus</b> (past narration, conditionals, present perfect…): the native/fluent speaker gently recasts errors on that pattern rather than correcting every slip. Swap languages for the last ten minutes if the Baylor partner is practicing Spanish — a bridge carries traffic both ways.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Ground rules</h3>
+        <p>Be on time; message your partner ahead if you must move a session. Cameras on when possible. Errors are material, not embarrassments. Everything shared stays between partners. If a partnership isn't working, write to the coordinators — no hard feelings, quick rematch.</p>
+      </div>
+      <div class="card">
+        <h3>Coordinators</h3>
+        <p class="note" style="margin-bottom:8px">Questions, rematching, technical trouble:</p>
+        <p style="word-break:break-all">ACAMC · <a href="mailto:cpemscome.acamc@gmail.com">cpemscome.acamc@gmail.com</a><br>
+        ACAMC Vicepresidencia Internacional · <a href="mailto:vicepresidenciainternacamc@gmail.com">vicepresidenciainternacamc@gmail.com</a><br>
+        SACNAS / Baylor · <a href="mailto:lito_guerrero1@baylor.edu">lito_guerrero1@baylor.edu</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>The nine weeks</h3>
+      <div class="tableScroll"><table class="weekTable" id="calendarTable"></table></div>
+      <p class="note" style="margin-top:10px">⚠️ <b>Clocks:</b> Cartagena and Waco share the same clock time through November 1. U.S. daylight saving ends <b>November 1, 2026</b> — for weeks 8 and 9, Cartagena is <b>one hour ahead</b> of Waco. Every time menu on this site shows both cities automatically.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATCHING ============ -->
+<section class="page" id="page-matching">
+  <div class="wrap">
+    <div class="eyebrow">Encuentra tu pareja · Partner matching</div>
+    <h2>Partner Matching</h2>
+    <p style="max-width:68ch">Add yourself under your track, join a partnership, and propose a meeting time for each week. A partnership turns <b style="color:var(--green2)">green</b> when both partners choose the same date and time, and <b style="color:var(--orange)">orange</b> while the two proposals differ.</p>
+    <div id="matchLists"></div>
+  </div>
+</section>
+
+<!-- ============ MATERIALS ============ -->
+<section class="page" id="page-materials">
+  <div class="wrap">
+    <div class="eyebrow">Materiales semanales · Weekly materials</div>
+    <h2>Weekly Materials</h2>
+    <p style="max-width:68ch">AI-generated session materials for all nine weeks — read them here or download them as PDFs. Clinical cases come in two versions: the <b>Full Guideline</b> (Baylor/SACNAS side) and the <b>Benchmark Sheet</b> (Cartagena/ACAMC side).</p>
+    <div class="card">
+      <div class="formRow">
+        <div class="field" style="max-width:260px"><label for="matWeek">Week</label><select id="matWeek"></select></div>
+        <div class="field"><label>Clinical view</label><span class="roleToggle" role="group" aria-label="Clinical view">
+          <button id="viewFull" class="on" type="button">Full guideline (SACNAS)</button>
+          <button id="viewBench" type="button">Benchmarks only (ACAMC)</button>
+        </span></div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="card">
+        <div class="eyebrow">Clinical track</div>
+        <h3 id="clinTitle"></h3>
+        <div class="matBody" id="clinBody"></div>
+        <div class="dl">
+          <button class="btn primary small" id="dlClinFull">⬇ Full Guideline PDF</button>
+          <button class="btn small" id="dlClinBench">⬇ Benchmark Sheet PDF</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Conversational track</div>
+        <h3 id="convTitle"></h3>
+        <div class="matBody" id="convBody"></div>
+        <div class="dl">
+          <button class="btn primary small" id="dlConv">⬇ Prompt Set PDF</button>
+        </div>
+      </div>
+    </div>
+    <p class="note" id="dlNote" style="margin-top:10px">PDFs are generated right in your browser and download instantly — no sign-in needed.</p>
+  </div>
+</section>
+
+<!-- ============ MEET ============ -->
+<section class="page" id="page-meet">
+  <div class="wrap">
+    <div class="eyebrow">Reuniones · Meetings</div>
+    <h2>Meet Links</h2>
+    <p style="max-width:68ch">Google doesn't allow Meet calls to be embedded inside other websites, so this page is the next best thing: every partnership keeps one standing Meet link here, and each week's confirmed meetings appear below with a one-click <b>Join</b> button.</p>
+    <div class="card">
+      <h3>This week's confirmed meetings</h3>
+      <div class="formRow"><div class="field" style="max-width:260px"><label for="meetWeek">Week</label><select id="meetWeek"></select></div></div>
+      <div class="tableScroll"><table class="weekTable" id="meetTable"></table></div>
+    </div>
+    <div class="card">
+      <h3>Partnership links</h3>
+      <p class="note">Create a room once at <a href="https://meet.google.com/new" target="_blank" rel="noopener">meet.google.com/new</a>, paste it for your pair, and reuse it all nine weeks.</p>
+      <div id="meetPairs"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SURVEY ============ -->
+<section class="page" id="page-survey">
+  <div class="wrap">
+    <div class="eyebrow">Evaluación · Proficiency survey</div>
+    <h2>Proficiency Survey</h2>
+    <p style="max-width:68ch">After weeks 1, 5, and 9, rate your partner's English performance using the scale below. Submissions are saved on this page for the coordinators, and you can also send a copy by email to the address you choose.</p>
+
+    <div class="card">
+      <h3>The scale</h3>
+      <div class="tableScroll"><table class="rubric">
+        <tr><th style="width:60px">Score</th><th>What it looks like in the session</th></tr>
+        <tr><td class="mono"><b>5</b></td><td>Communicates effortlessly; precise vocabulary; errors are rare and self-corrected; fully natural pace. (≈ CEFR C1–C2)</td></tr>
+        <tr><td class="mono"><b>4</b></td><td>Communicates clearly with occasional errors that never block understanding; good range; rarely searches for words. (≈ B2+)</td></tr>
+        <tr><td class="mono"><b>3</b></td><td>Gets the message across with effort; noticeable errors and pauses; sometimes needs rephrasing or repetition. (≈ B1–B2)</td></tr>
+        <tr><td class="mono"><b>2</b></td><td>Basic exchanges succeed; frequent errors and long pauses; relies on the partner to carry the conversation. (≈ A2–B1)</td></tr>
+        <tr><td class="mono"><b>1</b></td><td>Isolated words and memorized phrases; communication frequently breaks down. (≈ A1–A2)</td></tr>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <h3>Rate your partner</h3>
+      <div class="formRow">
+        <div class="field"><label for="svRater">Your name</label><input id="svRater" placeholder="e.g. María Pérez"></div>
+        <div class="field"><label for="svRole">You are…</label><select id="svRole"><option value="SACNAS">SACNAS · Baylor</option><option value="ACAMC">ACAMC · Cartagena</option></select></div>
+        <div class="field"><label for="svPartner">Partner's name</label><input id="svPartner" placeholder="Who you're rating"></div>
+        <div class="field" style="max-width:150px"><label for="svWeek">Checkpoint</label><select id="svWeek"><option value="1">Week 1 · baseline</option><option value="5">Week 5 · midpoint</option><option value="9">Week 9 · final</option></select></div>
+      </div>
+      <div id="ratingBlock" style="margin-top:16px"></div>
+      <div class="field" style="margin-top:6px"><label for="svComment">Comments — wins, struggles, what to practice next</label><textarea id="svComment" rows="3" placeholder="Optional but very helpful"></textarea></div>
+      <div class="formRow" style="margin-top:12px">
+        <div class="field" style="max-width:340px"><label for="svEmail">Also send a copy by email to</label><select id="svEmail">
+          <option value="">— don't email, just save —</option>
+          <option value="lito_guerrero1@baylor.edu">SACNAS · lito_guerrero1@baylor.edu</option>
+          <option value="cpemscome.acamc@gmail.com">ACAMC · cpemscome.acamc@gmail.com</option>
+          <option value="vicepresidenciainternacamc@gmail.com">ACAMC Vicepresidencia · vicepresidenciainternacamc@gmail.com</option>
+        </select></div>
+        <button class="btn primary" id="svSubmit">Submit survey</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Submitted surveys</h3>
+      <div class="tableScroll"><table class="weekTable" id="surveyTable"></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEEDBACK ============ -->
+<section class="page" id="page-feedback">
+  <div class="wrap">
+    <div class="eyebrow">Comentarios · Suggestions</div>
+    <h2>Comments &amp; Suggestions</h2>
+    <p style="max-width:68ch">Ideas, problems, requests — post them here for everyone, and use the email button to make sure the coordinating teams see them in their inboxes.</p>
+    <div class="card">
+      <div class="formRow">
+        <div class="field" style="max-width:220px"><label for="fbName">Name</label><input id="fbName" placeholder="Your name"></div>
+        <div class="field" style="max-width:190px"><label for="fbRole">Group</label><select id="fbRole"><option>ACAMC · Cartagena</option><option>SACNAS · Baylor</option><option>Coordinator</option><option>Other</option></select></div>
+      </div>
+      <div class="field" style="margin-top:10px"><label for="fbText">Comment or suggestion</label><textarea id="fbText" rows="3" placeholder="What should we keep, fix, or try?"></textarea></div>
+      <div class="formRow" style="margin-top:12px">
+        <button class="btn primary" id="fbPost">Post comment</button>
+        <button class="btn gold" id="fbMail">✉ Also email the coordinators</button>
+      </div>
+      <p class="note" style="margin-top:8px">The email button opens a pre-addressed message to cpemscome.acamc@gmail.com, lito_guerrero1@baylor.edu, and vicepresidenciainternacamc@gmail.com.</p>
+    </div>
+    <div class="card"><h3>Board</h3><div id="commentList"></div></div>
+  </div>
+</section>
+
+<footer><div class="wrap">PUENTE · A pilot cooperation of ACAMC (Universidad de Cartagena) &amp; SACNAS (Baylor University) · Sept 14 – Nov 14, 2026<br>Everyone with this link can add and edit information. Be kind to the bridge.</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script id="puente-content" type="text/plain" hidden></script>
+<script>
+/* ================= PROGRAM DATA ================= */
+const WEEKS=[
+ {n:1,start:"2026-09-14",end:"2026-09-20"},
+ {n:2,start:"2026-09-21",end:"2026-09-27"},
+ {n:3,start:"2026-09-28",end:"2026-10-04"},
+ {n:4,start:"2026-10-05",end:"2026-10-11"},
+ {n:5,start:"2026-10-12",end:"2026-10-18"},
+ {n:6,start:"2026-10-19",end:"2026-10-25"},
+ {n:7,start:"2026-10-26",end:"2026-11-01"},
+ {n:8,start:"2026-11-02",end:"2026-11-08"},
+ {n:9,start:"2026-11-09",end:"2026-11-14"}
+];
+/* Cartagena never changes clocks (UTC-5). Waco is CDT (UTC-5) through Nov 1, CST (UTC-6) after. */
+const weekOffset=w=>(w>=8?1:0); // hours Cartagena is AHEAD of Waco
+
+const CLINICAL=[
+{t:"Chest Pain in the ED",focus:"History-taking · OPQRST · signposting",
+ door:"Mr. Robert Hale, 58 — presents to the emergency department with 2 hours of chest pain. BP 148/92, HR 96, RR 18, SpO₂ 97% RA, T 36.9°C. Task: take a focused history and explain your initial plan.",
+ benchmarks:["Introduce yourself with name and role; confirm the patient's identity","Open with an open-ended question and let the patient speak uninterrupted ≥30 seconds","Characterize the pain fully (OPQRST: onset, provocation, quality, radiation, severity, timing)","Screen the cardiac risk profile: smoking, hypertension, diabetes, cholesterol, family history","Ask about associated symptoms: dyspnea, diaphoresis, nausea, palpitations","Respond to the patient's fear with an explicit empathy statement before more questions","Summarize the history back and invite corrections (signposting)","Explain the immediate plan (ECG, troponin, aspirin) in plain, jargon-free English"],
+ narrative:["You are Robert Hale, 58, a delivery driver from Waco. Two hours ago, while carrying boxes, a heavy pressure started in the center of your chest — 'like an elephant sitting on me.' It spreads to your left jaw, is 7/10, constant, slightly better at rest. You feel sweaty and a little sick to your stomach. You smoke half a pack a day since your twenties, your father died of a heart attack at 61, and you've been told your blood pressure runs high but you take nothing for it.","Volunteer only the pressure and the fear at first: 'I think something is really wrong, doc.' Give details only when asked the right question — radiation only if they ask where it travels, the family history only if they ask about family, and so on. If they use jargon ('radiation', 'diaphoresis'), look confused until they rephrase.","Midway, interrupt with: 'Am I having a heart attack? My dad died from this.' Score the empathy benchmark on how they handle that moment — a doctor who acknowledges the fear ('I can see this is frightening; you did the right thing coming in') before continuing passes; one who plows on with questions does not.","If the encounter stalls, offer a cue: rub your chest and say 'It's spreading up here now' (pointing to the jaw)."],
+ answers:["Most likely diagnosis to discuss: acute coronary syndrome (unstable angina vs NSTEMI/STEMI) — the case is written as a classic ACS presentation: pressure-like central pain, jaw radiation, diaphoresis, nausea, smoking, family history, hypertension.","A complete OPQRST here: Onset — exertional, 2h ago; Provocation — worse with exertion, partial relief at rest; Quality — pressure; Radiation — left jaw; Severity — 7/10; Timing — constant.","Plain-English plan the ACAMC student should produce: 'We're going to do a heart tracing (ECG) and a blood test that checks for strain on the heart muscle (troponin). We'll give you an aspirin to chew. You're in the right place and we're watching you closely.'","Red-flag phrases worth teaching in the debrief: 'crushing pain', 'impending doom', 'cold sweat'."],
+ phrases:["What brings you in today? — opening","I can see this is frightening. You did the right thing by coming in. — empathy","Can you point to where the pain is? Does it travel anywhere? — radiation","On a scale of zero to ten, with ten the worst pain imaginable… — severity","Let me make sure I have this right: the pain started two hours ago while… — summarizing","We'll run some tests to see how your heart is doing — I'll explain each result as it comes. — plan"],
+ vocab:[["pressure/tightness","the words English-speaking patients use for anginal pain"],["to radiate","pain traveling — patients say 'it spreads/travels'"],["diaphoresis → 'sweating'","translate jargon down for patients"],["light-headed","mareado — near-syncope"],["heartburn","acidez — key mimic to ask about"],["blood thinner","anticoagulante — plain English"],["to chew an aspirin","standard ACS instruction"],["follow-up","control/cita de seguimiento"]]},
+
+{t:"Asthma Flare & Inhaler Counseling",focus:"Explaining a diagnosis · teach-back · device instructions",
+ door:"Ms. Dana Whitfield, 24 — university student with 3 weeks of night-time cough and wheeze, worse with exercise and cold air. Known childhood asthma, no current medications. Vitals normal; mild expiratory wheeze. Task: take a focused history, explain the diagnosis, and teach correct inhaler use.",
+ benchmarks:["Elicit the pattern: night symptoms, triggers (exercise, cold air, dust), frequency per week","Ask about red flags: previous hospitalizations, intubation, oral steroid courses","Screen environment: smoking/vaping, pets, dorm conditions, allergies","Explain asthma in one plain sentence (airways get inflamed and squeeze) without jargon","Distinguish reliever vs controller inhaler and when each is used","Demonstrate/describe inhaler technique step by step in order","Use teach-back: ask the patient to repeat the plan in her own words","Close with a clear action plan: what to do if symptoms worsen, when to seek help"],
+ narrative:["You are Dana, 24, a psychology student. You cough every night around 3 a.m., wheeze when you jog, and your chest feels 'tight like a belt' in cold morning air. You had asthma as a child, 'grew out of it,' and stopped inhalers at 14. You vape 'socially.' Your roommate has a cat. You've never been hospitalized for breathing.","Be chatty and minimize: 'It's probably just a cold that won't leave, right?' Make the student work to convince you it's asthma returning. When they explain the inhalers, mix them up on purpose in the teach-back: 'So I use the brown one when I can't breathe?' — score whether they catch and correct it kindly.","If asked to demonstrate technique, do it wrong: no shake, no exhale first, two quick puffs. The student should correct: shake, exhale fully, seal lips, one slow deep puff with a 10-second hold, wait a minute between puffs, rinse mouth after steroid inhalers.","Push once on the vaping: 'Everyone vapes, it's just flavor.' Score how they counsel without lecturing."],
+ answers:["Diagnosis to communicate: relapsed asthma, currently uncontrolled (night symptoms >2×/month, exercise limitation).","Model plain-English explanation: 'Asthma means the breathing tubes in your lungs get irritated and squeeze down. The blue inhaler opens them fast when you're struggling; the brown one is a daily medicine that calms the irritation so attacks stop coming.'","Correct teach-back close: 'Just so I know I explained it well — can you tell me how you'll use the two inhalers this week?'","Escalation advice: reliever needed >2×/week, waking at night, or reliever not lasting 4 hours → come back; lips turning blue / can't speak full sentences → emergency."],
+ phrases:["Does anything set it off — exercise, cold air, dust, animals? — triggers","Have you ever been hospitalized or needed steroid tablets for your breathing? — severity screen","Think of the blue one as your rescue and the brown one as your bodyguard. — analogy","Let's go through the steps together — shake it first, then breathe all the way out… — instruction","Just so I know I explained it clearly, can you walk me through your plan? — teach-back","If you're using the blue inhaler more than twice a week, I need to see you again. — safety-netting"],
+ vocab:[["wheeze","silbido al respirar"],["chest tightness","opresión en el pecho"],["flare-up / exacerbation","crisis — use 'flare-up' with patients"],["reliever vs controller","broncodilatador de rescate vs corticoide inhalado"],["spacer","inhalocámara"],["to hold your breath","contener la respiración"],["safety-netting","telling patients exactly when to return"],["'grew out of it'","idiom: it went away with age"]]},
+
+{t:"Acute Abdominal Pain",focus:"Focused history · differential reasoning aloud · consent for exam",
+ door:"Mr. Luis Ortega, 21 — student athlete with 18 hours of abdominal pain that began around the navel and moved to the right lower side. Nausea, one episode of vomiting, no appetite. T 37.9°C, HR 92. Task: take a focused history, verbalize your leading differential, and explain next steps including consent for examination and possible surgery consult.",
+ benchmarks:["Map the pain's migration precisely (periumbilical → right lower quadrant) with time course","Ask the appetite question ('When did you last feel hungry?') and about nausea/vomiting order","Rule the differential in/out verbally: gastroenteritis, kidney stone, hernia, (and in females: ovarian/ectopic — say why it matters to ask)","Ask about aggravating movement: walking, coughing, speed bumps on the ride in","Ask permission clearly before describing the physical exam ('I'd like to examine your belly — is that okay?')","Explain what 'rebound tenderness' means in plain words while narrating the exam","State the working diagnosis with honest uncertainty ('this looks most like…, but we'll confirm')","Explain NPO status ('nothing to eat or drink for now') and why, plus labs/imaging/surgery consult"],
+ narrative:["You are Luis, 21, a soccer player. Yesterday after lunch a dull ache started around your belly button. Overnight it slid to the lower right and sharpened — now 6/10, worse with every step and when the car hit speed bumps. You vomited once this morning, after the pain started. Food sounds disgusting. No diarrhea, no urinary symptoms, no prior surgeries.","You're stoic and scared of missing playoffs: 'Can you just give me something and let me go? We have a match Friday.' Score how the student handles the negotiation honestly — acknowledging the stakes while being clear this can't wait.","When they narrate the exam, wince hard at the right-lower-quadrant press and when they let go quickly. If they say 'rebound tenderness' without explaining, ask 'what does that mean?'","If the student forgets the migration question, prompt: 'It didn't start here, you know.'"],
+ answers:["Working diagnosis: acute appendicitis — classic migration, anorexia, low-grade fever, pain-before-vomiting, worse with movement.","The order matters: pain → then vomiting suggests appendicitis; vomiting → then pain points elsewhere. This is a favorite USMLE discriminator.","Model consent language: 'I'd like to press on your belly, including one spot that may hurt. I'll be quick and I'll warn you first — is that okay?'","Model plan: 'You can't eat or drink for now, because if surgery is needed tonight an empty stomach is safer. We'll get blood work and an ultrasound or CT, and the surgical team will come see you.'"],
+ phrases:["Where did it start, and where is it now? — migration","When did you last actually feel hungry? — anorexia screen","Did the pain come first, or the vomiting? — sequence","Does it hurt more when you walk or cough? — peritoneal irritation","This looks most like appendicitis, and here's how we'll confirm it. — honest framing","I know Friday matters to you. That's exactly why we need to sort this out today. — negotiation"],
+ vocab:[["belly button / navel","ombligo — patients don't say 'periumbilical'"],["dull ache vs sharp pain","dolor sordo vs punzante"],["it moved / it traveled","migration in patient words"],["to keep food down","retener comida"],["NPO → 'nothing by mouth'","nada vía oral — explain, don't abbreviate"],["speed bump sign","pain on jolts — peritonitis clue"],["to rule out","descartar"],["surgical consult","interconsulta con cirugía"]]},
+
+{t:"New Type 2 Diabetes",focus:"Breaking a chronic diagnosis · motivational interviewing · numbers in English",
+ door:"Mrs. Angela Moore, 49 — routine labs show fasting glucose 156 mg/dL and HbA1c 8.1%. She's here 'for results.' BMI 33, sedentary job, mother has diabetes. Task: share the diagnosis, explain what it means, and negotiate first steps.",
+ benchmarks:["Fire a warning shot before the news ('I have your results, and there's something important…')","State the diagnosis clearly using the word 'diabetes' — no euphemism burying","Pause after the news; let silence work; respond to emotion before information","Explain HbA1c in plain words ('a three-month average of the sugar in your blood') with her numbers","Explore her ideas/concerns/expectations (ICE): what she knows, fears, and wants","Negotiate ONE realistic change (walking, sugary drinks) rather than a lecture of five","Explain metformin: what it does, the common stomach side effects, take with food","Arrange concrete follow-up: repeat A1c in 3 months, education class referral, when to call"],
+ narrative:["You are Angela, 49, an accounts manager. You expected 'maybe cholesterol.' Your mother's diabetes ended in dialysis, so the word terrifies you. When you hear it, go quiet, then: 'So I'll end up on the machine like my mom?' Score generously if the student names the fear, gives a real pause, and only then explains — score down if they respond to your fear with statistics.","You drink 3–4 sweet teas a day and drive to a desk job. If the student lists many changes at once, look overwhelmed: 'I can't do all that.' Reward the student who asks 'Which one feels doable this month?'","Push back once on medication: 'My neighbor said metformin wrecks your stomach.' The student should validate (it can upset the stomach at first), and offer the mitigation (start low, take with food, usually settles).","Ask at the end: 'What number should my sugar be?' — score whether they can say targets in English clearly."],
+ answers:["Diagnosis: type 2 diabetes mellitus (A1c ≥ 6.5% on two occasions or once with classic presentation — here 8.1%).","Model A1c explanation: 'This test is like a three-month report card for your blood sugar. Yours is 8.1; we'd like to steer it under 7.'","Motivational-interviewing move to teach: reflect, then ask permission — 'You're worried about ending up like your mom. Can I share what we can do to make your story different?'","First-line plan: lifestyle + metformin 500 mg with dinner, up-titrated; repeat A1c in 3 months; diabetes education referral; call if persistent vomiting/diarrhea on the medication."],
+ phrases:["I have your results, and there's something important we need to talk through. — warning shot","The test shows you have type 2 diabetes. — clear naming","That machine scared you with your mom. Tell me what's going through your mind. — emotion first","Out of everything we discussed, what feels doable this month? — one change","It can upset your stomach the first weeks — taking it with food helps a lot. — side effects","I want to see this number again in three months — let's book it before you leave. — follow-up"],
+ vocab:[["blood sugar","azúcar en la sangre — say this, not 'glycemia'"],["a report card","analogy for A1c"],["dialysis","diálisis — loaded family word here"],["overwhelmed","abrumada"],["'doable'","realistic/achievable — negotiation word"],["side effects","efectos secundarios"],["to cut back on","reducir (sweet teas)"],["fasting","en ayunas"]]},
+
+{t:"Headache Red Flags",focus:"Symptom screening · explaining tests · reassurance without dismissal",
+ door:"Ms. Priya Raman, 31 — software developer with 6 weeks of recurrent headaches, worse at her deadline-heavy job. Worried about a brain tumor after searching online. Neuro exam (per chart): normal. Task: take a headache history, screen red flags aloud, address the tumor fear, and explain whether imaging is needed.",
+ benchmarks:["Characterize the headache: location, quality (band-like vs throbbing), frequency, duration","Screen red flags explicitly: thunderclap onset, waking from sleep, fever/stiff neck, vision change, weakness/numbness, worst-ever, new after 50","Ask lifestyle load: screens, sleep, caffeine, water, stress — without sounding dismissive","Elicit the fear directly and early ('What's your biggest worry about these?')","Explain why the story fits tension-type headache in plain English","Explain why a scan is NOT needed now — and exactly what would change that","Offer a concrete management plan: sleep/screen hygiene, headache diary, analgesic-overuse warning","Safety-net with specific return triggers, not vague 'come back if worse'"],
+ narrative:["You are Priya, 31. The headaches are a tight band around the whole head, build over the afternoon, 3–4 days a week, ease on weekends. No nausea, no light sensitivity, never wake you at night. You sleep 5 hours, drink 4 espressos, and stare at screens 12 hours a day. Dr. Google says tumor, and your aunt had one — lead with that fear only if the student asks what worries you; otherwise hint ('I read some scary things…').","If the student orders an MRI just to comfort you, take the win but act unconvinced — the debrief should cover why that fails the station. If they refuse a scan without explaining what WOULD warrant one, push: 'So you're just sending me home?'","Score the reassurance benchmark on structure: acknowledge the fear as reasonable, walk through the specific red flags you DON'T have, then the plan. Reassurance without the red-flag walk-through is dismissal.","Take the headache-diary suggestion with a laugh: 'I'm a developer, I'll build a spreadsheet.'"],
+ answers:["Diagnosis to communicate: tension-type headache, likely amplified by sleep debt, caffeine, and screen strain. No red flags → no imaging indicated.","The red-flag list, patient-worded: a headache that hits 'like a clap of thunder', wakes you from sleep, comes with fever and a stiff neck, changes your vision or strength, or is 'the worst of your life'.","Model reassurance: 'A tumor headache almost never looks like yours — it wakes people at night, gets steadily worse, and brings other changes. You have none of those, and your exam is completely normal. Here's exactly what would make me order a scan the same day…'","Analgesic-overuse pearl: painkillers >10–15 days/month can cause rebound headaches — worth one sentence."],
+ phrases:["If you had to describe it in one image — squeezing, throbbing, stabbing? — quality","Do they ever wake you from sleep? — red flag","What's your biggest worry about these headaches? — eliciting fear","It's completely reasonable to think of serious causes — let's check them off together. — validation","Your exam and your story both point away from anything dangerous. — evidence-based reassurance","If you ever get a sudden, worst-of-your-life headache, that's an emergency-room visit, not a wait. — safety-netting"],
+ vocab:[["band-like / squeezing","como una banda apretada"],["throbbing","pulsátil"],["stiff neck","rigidez de cuello"],["'thunderclap'","súbito e intensísimo — classic exam word"],["rebound headache","cefalea por abuso de analgésicos"],["screen strain","fatiga visual por pantallas"],["to check off","descartar uno por uno"],["peace of mind","tranquilidad"]]},
+
+{t:"Hypertension & the Reluctant Patient",focus:"Medication adherence · shared decision-making · lifestyle counseling",
+ door:"Mr. James Carter, 62 — follow-up for hypertension. Home readings 150–160/95. Prescribed lisinopril 3 months ago; admits he stopped after 2 weeks. Task: explore why he stopped, explain the stakes without threats, and agree a plan he'll actually follow.",
+ benchmarks:["Discover the non-adherence non-judgmentally (assume it's common, ask openly)","Elicit the real reason he stopped (side effect? belief? cost?) rather than guessing","Explain what untreated 155/95 does over years — stroke, heart, kidneys — in vivid plain English","Distinguish 'feeling fine' from 'being fine' (the silent-disease conversation)","Address the specific barrier: the dry cough of ACE inhibitors and the alternative (ARB)","Involve him in the choice — offer options and ask his preference","Add one lifestyle lever with numbers he can grasp (salt, walking)","Confirm the plan with teach-back and set a home-monitoring routine"],
+ narrative:["You are James, 62, a retired electrician. The pills gave you a dry, tickly cough that ruined your sleep, so you quit — and you feel fine, so 'maybe my body just doesn't want it.' You didn't call because you didn't want to be a bother. You salt everything ('food tastes like cardboard without it') and your late brother had a stroke at 66 — mention the brother only if the conversation earns your trust.","Open guarded: 'My pressure's always run a little high. My dad lived to 90.' If the student lectures or threatens ('you'll have a stroke'), fold your arms and go quiet. If they ask WHY you stopped, brighten and tell them about the cough.","When offered an alternative pill without the cough, be surprised: 'There's another kind? Nobody said that.' Score the shared-decision benchmark on whether they offer a real choice and ask what you prefer.","On salt, bargain: you'll try herbs and no added salt at dinner, not a bland life. A student who accepts the partial win passes; one who demands perfection doesn't."],
+ answers:["Core teaching point: ACE-inhibitor cough affects ~1 in 10; switching to an ARB (losartan) keeps the protection without the cough. Non-adherence usually has a findable reason.","Model 'silent disease' line: 'High blood pressure doesn't hurt — that's exactly what makes it dangerous. It works on your arteries quietly for years, and the first symptom can be a stroke.'","Shared-decision model: 'We have options: a cousin of that pill that rarely causes cough, or a different family entirely. Would you like to hear the trade-offs?'","Plan to reach: losartan daily, home readings each morning ×2 weeks brought to next visit, salt swap at dinner, recheck in 4 weeks. Brother's story surfaces naturally as motivation, not as a threat."],
+ phrases:["Lots of people stop their pills — pretty much everyone, honestly. What happened with yours? — normalizing","What does taking a pill every day mean to you? — beliefs","You feel fine, and I believe you. The trouble is pressure damages quietly. — feel vs be","There's a sister medication that almost never causes that cough. — the fix","Which of these sounds more livable to you? — shared decision","Bring me two weeks of morning readings — you be the scientist. — activation"],
+ vocab:[["dry tickly cough","tos seca — classic ACE-inhibitor phrase"],["'a bother'","una molestia — why patients don't call"],["silent disease","enfermedad silenciosa"],["trade-offs","pros y contras"],["to fold your arms","body language of resistance"],["livable","sostenible en la vida real"],["home readings","tomas en casa"],["stroke","derrame/ACV — know both English registers"]]},
+
+{t:"The Febrile Child (Talking to a Parent)",focus:"Third-party history · calming an anxious parent · discharge criteria",
+ door:"Sofia Nguyen, 2 years old, brought by her mother — 24 hours of fever to 39.2°C, pulling at her right ear, fussy but drinking, playful between fever spikes. Vaccines up to date. Task: take the history from the mother, assess for red flags aloud, explain the likely diagnosis, and give safety-netting for home care.",
+ benchmarks:["Address both mother and child; use the child's name throughout","Take a structured fever history: height, duration, response to antipyretics, wet diapers, feeding, rash","Screen the scary stuff out loud: neck stiffness, non-blanching rash, lethargy between spikes, breathing difficulty, fluid intake","Acknowledge the mother's worry explicitly before reassuring","Explain acute otitis media simply (a small infection behind the eardrum, common at this age)","Explain the plan: pain/fever control with correct weight-based dosing language, watchful waiting vs antibiotics","Give discharge criteria as concrete scenarios ('come back tonight if…'), not adjectives","Check understanding and invite remaining questions ('What else is on your mind?')"],
+ narrative:["You are Sofia's mother, a first-time parent running on no sleep. Sofia spiked to 39.2 last night; medicine brings it down and she plays, then it climbs again. She's tugging her right ear and cried through the night, but she's drinking her milk and had normal wet diapers. No rash, no vomiting, no breathing trouble.","Open with the real fear: 'The fever won't break — is it meningitis? I read about a baby who…'. Score whether the student takes the fear seriously and screens meningitis features out loud rather than waving it away.","Ask the trap question: 'Shouldn't she get antibiotics right away, just in case?' — score the explanation of why waiting 48h with pain control is safe for her specific case (age ≥2, unilateral, mild) and under exactly what conditions antibiotics start.","Ask a dosing question: 'How much medicine do I give her?' The student should speak in weight-based, syringe-and-label terms ('the dose depends on her weight — follow the syringe markings and I'll write it down') rather than guessing numbers."],
+ answers:["Likely diagnosis: acute otitis media, right ear — fever + ear-tugging + irritability, well-appearing between spikes, hydrating.","Reassurance logic to verbalize: playful between spikes, drinking, wet diapers, no rash, no neck stiffness, vaccinated — the story of a well child with a sore ear, not meningitis.","Watchful waiting is appropriate at ≥2 years with mild unilateral AOM: pain relief + review in 48h; start antibiotics if worsening or not improving. High fever alone is not lethargy — lethargy means floppy, hard to wake, not interacting even when the fever is down.","Return-tonight list: won't drink or no wet diaper in 8+ hours, a rash that doesn't fade when pressed with a glass, hard to wake, stiff neck, labored breathing, fever beyond 5 days."],
+ phrases:["You know Sofia best — what's different about her this time? — parent as expert","That's the fear every parent has, so let's check for it together, piece by piece. — naming the fear","Between the fever spikes, is she playing and making eye contact? — the key question","There's a small infection behind her eardrum — very common at her age, and very treatable. — diagnosis","Give the medicine for comfort, not to chase a number on the thermometer. — fever philosophy","If she won't drink, or you can't wake her properly — that's a come-back-tonight, any hour. — safety-netting"],
+ vocab:[["to break (a fever)","bajar la fiebre — 'the fever won't break'"],["fussy / cranky","irritable — parent vocabulary"],["wet diapers","pañales mojados — hydration proxy"],["floppy","hipotónico, in parent words"],["non-blanching rash","rash que no palidece — glass test"],["ear-tugging","jalarse la oreja"],["watchful waiting","conducta expectante"],["over-the-counter","de venta libre"]]},
+
+{t:"Breaking Bad News",focus:"SPIKES protocol · silence · chunk-and-check",
+ door:"Mrs. Elena Vasquez, 54 — returns for the result of a breast biopsy taken after an abnormal mammogram. The pathology shows invasive ductal carcinoma, 1.8 cm, receptor testing pending. Her sister survived breast cancer. Task: share the result and build the next steps together.",
+ benchmarks:["Set up: privacy, sitting down, 'is now still a good time', ask who's with her / who she'd like involved","Perception: ask what she understands so far about why the biopsy was done","Invitation: ask how much detail she wants today","Knowledge: warning shot, then the word 'cancer' clearly, in one short sentence — then STOP","Empathy: tolerate the silence; respond to the emotion (name it) before any medical detail","Chunk-and-check: small pieces of information, checking understanding after each","Strategy: concrete next steps (receptor results, breast team appointment, a written summary) and a named contact","Never false certainty — honest hope: treatable, plan forming, she will not navigate it alone"],
+ narrative:["You are Elena, 54, a school librarian. Your sister had breast cancer eight years ago and is well — you're 'hoping it's the same nothing she had at first.' You came alone; your husband is parking the car.","When you hear the warning shot, grip your bag. When you hear 'cancer', go completely silent for a real 10 seconds — count them — then whisper 'I knew it.' Score heavily on what the student does inside that silence: sitting with it passes; filling it with statistics fails.","Ask, in this order, if space is given: 'How bad is it?' — 'Will I lose my breast?' — 'Do I have to tell my daughter?' Reward honest not-knowing ('the receptor tests will tell us more this week') over invented reassurance.","When your husband 'arrives' (say: 'my husband is just parking'), see if the student offers to wait or to call him in — the ask-who-is-with-you benchmark can be rescued here.","End by asking 'So what happens now?' — the strategy benchmark lives or dies on whether you leave with concrete next steps and a named contact."],
+ answers:["The news, modeled: 'I'm afraid the biopsy shows what we were worried about. It is breast cancer.' (Warning shot → the word → stop.)","What can honestly be said today: it's 1.8 cm; further receptor tests this week will guide treatment options; the breast team meets her within days; many breast cancers found at this size are very treatable — her sister's survival is real, relevant hope.","What cannot honestly be answered yet: staging beyond the biopsy, surgery type, chemotherapy — model the phrase 'I don't want to guess; the team will know after the receptor results.'","SPIKES = Setting, Perception, Invitation, Knowledge, Empathy, Strategy/Summary — the debrief should walk the recording of the conversation against all six."],
+ phrases:["Before I go on — would you like your husband here for this? — setting","What's your understanding of why we did the biopsy? — perception","I'm afraid I have difficult news. — warning shot","It is cancer. — clarity, then silence","This isn't the news you hoped for. Take your time. — naming emotion","Here's what happens this week — and this is the number of your nurse navigator, a real person who answers. — strategy"],
+ vocab:[["biopsy result","resultado de la biopsia"],["warning shot","frase de aviso antes de la noticia"],["'I'm afraid…'","softener that precedes bad news in English"],["treatable","tratable — honest hope word"],["nurse navigator","enfermera guía del proceso oncológico"],["to sink in","asimilarse — 'let it sink in'"],["staging","estadificación"],["'one step at a time'","idiom for pacing the journey"]]},
+
+{t:"Heart-Failure Discharge & Handoff",focus:"Discharge counseling · teach-back · SBAR handoff",
+ door:"Mr. Walter Briggs, 70 — day 4 after admission for decompensated heart failure, now stable and going home. New medications include furosemide. Task: deliver discharge counseling with teach-back, then give a 60-second SBAR handoff of Mr. Briggs to a colleague (your partner switches roles for this).",
+ benchmarks:["Open by asking what he already knows about why he was admitted","Explain heart failure in one plain image (a pump that falls behind, fluid backs up)","Cover the daily weight rule with exact numbers (same scale, every morning, call if +2–3 lb overnight or +5 lb in a week)","Explain furosemide practically: the morning rule, bathroom planning, the salt connection","Cover sodium and fluid limits with real-food examples, not milligrams alone","Give the exact call-vs-911 split (swelling/weight/breathless lying flat → call; chest pain/severe breathlessness → 911)","Run a full teach-back and correct one planted misunderstanding","Deliver an SBAR handoff: Situation, Background, Assessment, Recommendations — complete, ordered, under 90 seconds"],
+ narrative:["You are Walter, 70, a widower who lives alone and cooks 'from cans.' You feel much better and mostly want to go home to your dog. You think the water pill is 'just for a few weeks, till I dry out.' Plant that misunderstanding early and see if the teach-back catches it — it must be corrected to: most of these medicines are long-term.","Ask practical questions: 'Can I still have my ham sandwich?' (canned soup, deli meat — the sodium conversation must use foods, not numbers). 'What if I'm out in the morning — take the pill at night?' (no — you'll be up all night in the bathroom).","In the teach-back, repeat back three things right and one wrong ('call you if I gain five pounds in a month'). Score the catch.","PART 2 — flip roles: now the ACAMC student is the discharging doctor handing Mr. Briggs to the 'night resident' (played by the SACNAS student). Score the SBAR against the guideline's model. Interrupt once with 'Sorry, which medications again?' to test recovery."],
+ answers:["Plain-English HF: 'Your heart is a pump that's fallen behind. When it falls behind, fluid backs up — into your lungs and legs. The pills keep the pump ahead of the fluid.'","Weight rule: same scale, every morning after the bathroom before breakfast, write it down; +2–3 lb overnight or +5 lb in a week = call the clinic that day.","Model SBAR — S: 'Mr. Briggs, 70, day 4 of heart-failure admission, discharging today.' B: 'Admitted with a week of worsening breathlessness and leg swelling; echo shows a weak pump; diuresed 4 liters.' A: 'Now stable — breathing comfortably on room air, weight down 4 kg, walking the hallway.' R: 'Home today on furosemide 40 daily plus his heart medicines; daily weights with the 2-3-5 rule; clinic review in 7 days; labs (kidneys and potassium) in 1 week.'","Furosemide pearls: morning dosing, expect urination within the hour, don't double up if missed, report dizziness/cramps (potassium)."],
+ phrases:["Tell me in your own words why you were in the hospital. — start from his story","Your heart is a pump that fell behind — the fluid backed up. — the image","Same scale, same time, every morning — you're the early-warning system. — daily weights","That pill and salt are enemies: the more salt, the harder it works. — the connection","Almost perfect — one small fix: five pounds in a week, not a month. — teach-back correction","I'm handing over Mr. Briggs: situation is… — SBAR opener"],
+ vocab:[["water pill","diurético — what patients call furosemide"],["to retain fluid","retener líquidos"],["breathless lying flat","ortopnea in patient words"],["swollen ankles","tobillos hinchados"],["deli meat / canned soup","the sodium villains"],["handoff / handover","entrega de turno"],["'the 2-3-5 rule'","weight-gain call thresholds"],["follow-up labs","laboratorios de control"]]}
+];
+
+const CONV=[
+{t:"Nice to Meet You: Life Stories",grammar:"Past simple vs past continuous — narrating your history",
+ gex:["I was studying biology when I decided to switch to medicine.","We moved to Cartagena while my father was working at the port.","What were you doing when you realized you wanted this career?"],
+ warmup:"Two truths and a lie about your childhood — partner guesses the lie.",
+ prompts:["Walk me through the city or town where you grew up — what would I see, smell, and hear on your street?","Who named you, and is there a story behind your name?","What was your family doing before you were born? How did they end up where they are?","Tell me about a teacher who changed your direction. What exactly did they do?","What were you obsessed with at age ten? What happened to that obsession?","Describe the day you decided on your current path. Where were you standing? Who did you tell first?","What's a family story that gets retold at every gathering?","What did your grandparents' daily life look like compared to yours?","Tell me about a time you got completely lost — literally or in life.","What's one moment you'd relive exactly as it happened?"],
+ idioms:["to look up to someone — admirar a alguien","a turning point — un punto de inflexión","out of the blue — de la nada","to run in the family — venir de familia","back in the day — en aquellos tiempos"],
+ bench:["Each partner narrates one story of 2+ minutes without switching languages","Past continuous appears correctly at least 3 times ('I was living…')","Both ask at least 3 follow-up questions ('And then what happened?')","One family idiom is used naturally by each partner","Exchange one photo or object story if comfortable","Close by summarizing your partner's story back to them"]},
+{t:"An Ordinary Tuesday: Daily Life & Routines",grammar:"Present simple + adverbs of frequency; telling time naturally",
+ gex:["I usually round at seven, but on Fridays we start at six.","I hardly ever cook on weekdays — my roommate almost always does.","How often do you actually eat breakfast sitting down?"],
+ warmup:"Describe yesterday hour by hour in fast-forward — 60 seconds max.",
+ prompts:["Take me through your perfect ordinary day — not a vacation, a Tuesday.","What time does your city wake up? Compare the sounds of 6 a.m. in Waco vs Cartagena.","What do students eat between classes at your university? What does it cost?","How do you get to campus, and what do you do during the ride?","What's your study ritual — place, music, snacks, superstitions?","How late is 'late' for dinner in your country? Who eats together?","What apps do you check first in the morning, and honestly, why?","What does Sunday look like in your family?","What part of your routine would shock your partner's country?","If you could delete one chore from your life forever, which one and why?"],
+ idioms:["to run late — andar tarde","a morning person / night owl — madrugador / noctámbulo","to grab a bite — comer algo rápido","like clockwork — como un reloj","to wind down — relajarse al final del día"],
+ bench:["Use at least 5 different frequency adverbs (always, usually, often, rarely, never…)","Tell time three ways ('half past six', 'six thirty', 'around six')","Compare one routine between both cities with 'while/whereas'","Teach your partner one food word from your daily life","Ask and answer 'how long does it take…?' correctly","Spot one habit you both share"]},
+{t:"The Family Table: Food & Traditions",grammar:"Comparatives & superlatives; describing taste and texture",
+ gex:["Arepas de huevo are crispier than anything I've had in Texas.","The best meal of my life was simpler than you'd expect.","Is Texas barbecue smokier or sweeter than Colombian asado?"],
+ warmup:"Describe one dish from home so vividly your partner can almost taste it — no naming it until they beg.",
+ prompts:["What dish means 'home' to you, and who makes it best?","Describe your city's signature street food to someone who's never seen it.","What's the biggest food-related argument in your family?","Walk me through a holiday meal: who cooks, who's late, who washes up?","What food from your partner's country do you most want to try — and what are you afraid to try?","What did you eat during exam weeks? Defend your choices.","Sweet or savory breakfast — argue your country's position.","What's the strangest thing a visitor would find in your kitchen?","If Cartagena and Waco traded one dish permanently, which trade is fair?","Describe the best meal you've ever eaten: place, company, plate."],
+ idioms:["comfort food — comida que abraza","to have a sweet tooth — ser goloso","melt-in-your-mouth — que se deshace en la boca","to eat like a horse — comer muchísimo","homemade beats store-bought — lo casero gana"],
+ bench:["Use 8+ taste/texture words (crispy, smoky, tangy, chewy…)","Form comparatives and superlatives correctly 5+ times","Teach the exact pronunciation of one dish from your country","Tell one full holiday-meal story in past tense","Politely disagree about food at least once ('I see it differently…')","End with a two-dish 'menu' you'd cook together"]},
+{t:"Campus Lives: Studying Medicine & Science",grammar:"Modals of obligation and advice — must, have to, should, ought to",
+ gex:["We have to pass a national exam before clinical rotations.","You shouldn't memorize everything — you must understand the mechanism.","Do you think students ought to work while studying?"],
+ warmup:"Explain your class schedule this semester in under a minute — partner asks two questions.",
+ prompts:["What does it take to get into your program? Walk me through the whole path.","Describe your hardest course ever. What made it brutal — the material or the professor?","What are the unwritten rules of your faculty that no one tells first-years?","How do students at your university handle stress — officially and unofficially?","What must a doctor in your country do after graduating? Compare the licensing paths (this is literally why PUENTE exists).","What should professors stop doing? Be brave.","Is it acceptable to question a professor in class in your culture?","What do students protest about at your university?","What's your dream rotation or research area, and what do you have to do to get there?","If you could redesign one thing about medical/science education, what would it be?"],
+ idioms:["to pull an all-nighter — trasnochar estudiando","to cram — estudiar a última hora","the bar is high — el nivel exigido es alto","to burn out — quemarse/agotarse","rite of passage — rito de iniciación"],
+ bench:["Use must/have to/should each at least twice, correctly","Explain one licensing step (ECFMG, internado, USMLE) clearly to your partner","Ask for and give advice about studying ('If I were you…')","Compare one 'unwritten rule' between the two universities","Keep a 3-minute monologue going about your hardest course","Recap: each partner lists two things they learned about the other system"]},
+{t:"Ten Years From Now: Dreams & Ambitions",grammar:"Future forms — will, going to, present continuous for plans; first conditional",
+ gex:["I'm taking the OET next year, and if I pass, I'll apply for observerships.","I'm going to specialize in surgery — nothing will change my mind.","If the match doesn't work out, I'll try research first."],
+ warmup:"Finish the sentence five ways: 'In ten years I will…' — no repeating verbs.",
+ prompts:["Describe your life at 35 as if it already happened: city, job, home, ordinary Tuesday.","What's the next big step you're actually preparing for right now?","If you could train anywhere in the world, where and in what specialty — and why there?","What backup plan do you secretly respect?","What will medicine/science look like when we're 50? What's your bold prediction?","Who do you want to become — not what job, what kind of person?","What would you do if money were irrelevant?","What scares you most about the future, and what will you do if it happens?","What's one dream you've never said out loud in English?","What will you two toast to when this program ends in November?"],
+ idioms:["to keep your options open — no cerrarse puertas","a long shot — algo improbable pero posible","to land a position — conseguir un puesto","against all odds — contra todo pronóstico","the sky's the limit — sin límites"],
+ bench:["Use 'going to' for plans and 'will' for predictions — correctly distinguished","Build 3+ first-conditional sentences ('If I pass, I'll…')","Describe one concrete preparation step happening now (present continuous)","Ask your partner two 'what if' questions","Share one fear and one hope each","Write one shared goal for the end of the pilot"]},
+{t:"Postcards: Travel & Places",grammar:"Present perfect vs past simple — experiences vs finished events",
+ gex:["I've never seen snow, but I saw the sea for the first time in 2019.","Have you ever been outside your country? When did you go?","I've always wanted to visit Cartagena's walled city — you actually live there!"],
+ warmup:"Sell your city to your partner in 45 seconds like a tour guide with too much coffee.",
+ prompts:["What's the farthest you've ever been from home? Tell the whole story.","Describe the most beautiful place you've ever stood. What did it do to you?","Have you ever been truly lost in a place you didn't know? What happened?","Give me the real tour of your city — not the tourist one. Where do locals actually go?","What place in your own country have you never visited but should have?","Beach person or mountain person — defend it with evidence.","What's the strangest thing you've ever eaten while traveling?","If your partner visits you next year, plan their first 24 hours, hour by hour.","What's a place you've been that changed how you see your own home?","Where haven't you been yet that you know — you KNOW — you'll go?"],
+ idioms:["off the beaten path — fuera de las rutas típicas","to catch a flight — tomar un vuelo","a hidden gem — una joya escondida","to travel light — viajar ligero","wanderlust — ansias de viajar"],
+ bench:["Distinguish present perfect vs past simple in 5+ exchanges ('Have you ever…?' / 'Yes, I went in…')","Ask 'Have you ever…?' at least 4 times","Describe one place using all five senses","Plan a 24-hour itinerary together out loud","Teach a local word or place-name and its pronunciation","Note one destination you now both want to visit"]},
+{t:"Fiesta & Football: Celebrations, Music & Fandom",grammar:"Storytelling connectors — first, then, suddenly, meanwhile, in the end",
+ gex:["First the drums start, then the whole street becomes the party.","We were losing 2–0; suddenly, in the last ten minutes, everything changed.","Meanwhile, my grandmother was already dancing on the porch."],
+ warmup:"Narrate the best party or game you ever attended in exactly six sentences using six different connectors.",
+ prompts:["Describe Carnaval, Homecoming, or the biggest celebration your city knows — make me feel the street.","What song makes your whole country stand up? Play 15 seconds of it.","Tell the story of a match (any sport) you'll never forget — build the suspense properly.","What do people in your city do on a Friday night, honestly?","Teach your partner three essential slang words young people use right now.","What holiday tradition would look completely absurd to a foreigner? Explain it with love.","Who's the artist from your country everyone should know? Make the case.","Have you ever danced badly in public? Details required.","What does your family do on December 31st, minute by minute until midnight?","Design a joint holiday for Waco and Cartagena: name, date, food, music, one mandatory ritual."],
+ idioms:["the life of the party — el alma de la fiesta","to give someone goosebumps — poner la piel de gallina","to go wild — enloquecer(se)","a nail-biter — un partido de infarto","to dance the night away — bailar toda la noche"],
+ bench:["Use 6+ storytelling connectors across the session","Tell one complete suspense story with a beginning, build-up, and payoff","Teach and correctly pronounce 3 slang words each","React naturally in English ('No way!', 'You're kidding!') 5+ times","Describe music using 5+ adjectives beyond 'good'","Invent the joint holiday and write down its name"]},
+{t:"What Would You Do? Debates & Hypotheticals",grammar:"Second conditional — would, could, might + polite disagreement",
+ gex:["If I were the dean, I would cut lectures to three hours a day.","I see your point, but I'd argue the opposite.","What would you do if you had a year with no exams?"],
+ warmup:"Rapid fire: 'Would you rather…?' — five rounds each, one-sentence justifications.",
+ prompts:["If you could change one law in your country tomorrow, what would it be?","Would you rather be the smartest person in the room or the most trusted? Debate it.","If your university gave you $1 million for one project, what would you build?","Should social media require real names? Take opposite sides for 5 minutes, then switch.","If you could have dinner with any scientist or doctor in history, who — and what's your first question?","Would you accept a residency spot in a country whose language you don't speak?","If AI could diagnose better than doctors, what would remain for humans? (Meta question for this AI-generated prompt — discuss.)","What would your 15-year-old self say about your life right now?","If you had to leave your country for ten years, what three things would you take?","Invent a difficult ethical case for your partner and make them decide out loud."],
+ idioms:["to play devil's advocate — abogado del diablo","I see where you're coming from — entiendo tu punto","to sit on the fence — no tomar partido","a slippery slope — una pendiente resbaladiza","let's agree to disagree — acordemos discrepar"],
+ bench:["Form 6+ correct second conditionals ('If I were… I would…')","Disagree politely at least 3 times using softeners","Hold an assigned position you don't believe for 5 minutes","Use 'might/could' for possibilities, not just 'will'","Ask one ethical question and follow up twice","Each partner concedes one point gracefully"]},
+{t:"Look How Far We've Come: Reflection & Goodbyes (For Now)",grammar:"Present perfect for change over time + expressing gratitude",
+ gex:["My listening has improved more than my speaking has.","We've talked for nine weeks and I've stopped translating in my head.","I'm grateful for how patient you've been with my questions."],
+ warmup:"Say something to your partner in English that you couldn't have said in Week 1.",
+ prompts:["What's the biggest change you've noticed in your partner's English since September? Be specific and generous.","What moment from these nine weeks will you remember in five years?","What was the hardest week for you, and how did you push through it?","Which word or phrase from these sessions has become 'yours' now?","What surprised you most about your partner's country and life?","What do you still want to fix in your English, and what's your plan after PUENTE?","What advice would you give the next cohort of PUENTE partners?","How will you two stay in contact — practically, really?","If PUENTE continues, what should change and what must never change? (Then post it on the Comments page!)","Say your goodbyes — then plan the first message you'll send after the program ends."],
+ idioms:["to come a long way — haber avanzado mucho","to keep in touch — mantener el contacto","it's not goodbye, it's see you later — no es adiós","to pay it forward — devolver el favor al siguiente","hands down — sin ninguna duda"],
+ bench:["Use present perfect to describe change 5+ times ('I've improved…', 'You've stopped…')","Give three specific, evidence-based compliments on your partner's progress","Complete both Week 9 proficiency surveys during or right after this call","Exchange contact info for after the program","Write one sentence of advice for the next cohort (post it to Comments & Suggestions)","Thank each other — properly, in full sentences, in English"]}
+];
+</script>
+
+<script>
+/* ================= APP ================= */
+/* Shared data lives in a Firebase Realtime Database, reached over its REST API.
+   DB_URL is the project's databaseURL, e.g. https://puente-xxxxx-default-rtdb.firebaseio.com */
+const DB_URL="https://puente-eb467-default-rtdb.firebaseio.com";
+const dbConfigured=()=>/^https?:\/\//.test(DB_URL);
+
+let state={pairs:[],comments:[],surveys:[]};
+let connected=false,lastSnap='',pendingRender=false;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const toast=m=>{const t=$('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);};
+
+function api(path,method,body){
+  const url=DB_URL.replace(/\/$/,'')+'/puente'+(path?'/'+path:'')+'.json';
+  return fetch(url,{method:method||'GET',headers:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)})
+    .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();});
+}
+function setBanner(msg){const b=$('liveBanner');if(!msg){b.classList.add('hide');}else{b.textContent=msg;b.classList.remove('hide');}}
+function normalize(raw){
+  raw=raw||{};
+  const arr=o=>Object.entries(o||{}).map(([k,v])=>Object.assign({id:k},v||{}));
+  state.pairs=arr(raw.pairs).sort((a,b)=>(a.created||0)-(b.created||0));
+  state.comments=arr(raw.comments).sort((a,b)=>(b.at||0)-(a.at||0));
+  state.surveys=arr(raw.surveys).sort((a,b)=>(b.at||0)-(a.at||0));
+}
+function typingNow(){const a=document.activeElement;return a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName);}
+async function refresh(force){
+  if(!dbConfigured()){setBanner('Site setup is still in progress — the shared database isn’t connected yet, so changes can’t be saved. Check back soon.');return;}
+  try{
+    const raw=await api('');
+    connected=true;setBanner('');
+    const snap=JSON.stringify(raw);
+    if(snap===lastSnap&&!force)return;
+    lastSnap=snap;normalize(raw);
+    if(typingNow()&&!force){pendingRender=true;return;}
+    renderAll();
+  }catch(e){
+    connected=false;
+    setBanner('Can’t reach the shared database right now — check your internet connection. The page will keep retrying automatically.');
+  }
+}
+function ready(){
+  if(!dbConfigured()){toast('The shared database isn’t connected yet — changes can’t be saved.');return false;}
+  return true;
+}
+async function put(path,body,msg){if(!ready())return;try{await api(path,'PUT',body);if(msg)toast(msg);await refresh(true);}catch(e){toast('Could not save — please check your connection and try again.');}}
+async function post(path,body,msg){if(!ready())return;try{await api(path,'POST',body);if(msg)toast(msg);await refresh(true);}catch(e){toast('Could not save — please check your connection and try again.');}}
+async function delPath(path,msg){if(!ready())return;try{await api(path,'DELETE');if(msg)toast(msg);await refresh(true);}catch(e){toast('Could not delete — please try again.');}}
+
+/* ---------- dates & times ---------- */
+const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function d2(dstr){const[y,m,d]=dstr.split('-').map(Number);return new Date(Date.UTC(y,m-1,d));}
+function fmtDate(dstr){const d=d2(dstr);return DOW[d.getUTCDay()]+' '+MON[d.getUTCMonth()]+' '+d.getUTCDate();}
+function weekDates(w){const wk=WEEKS[w-1],out=[];let d=d2(wk.start);const end=d2(wk.end);while(d<=end){out.push(d.toISOString().slice(0,10));d=new Date(d.getTime()+864e5);}return out;}
+function fmt12(t){let[h,m]=t.split(':').map(Number);const ap=h>=12?'PM':'AM';h=h%12||12;return h+':'+String(m).padStart(2,'0')+' '+ap;}
+function slotLabel(w,t){const off=weekOffset(w);if(!off)return fmt12(t)+' (both cities)';let[h,m]=t.split(':').map(Number);const c=String((h+off)%24).padStart(2,'0')+':'+String(m).padStart(2,'0');return fmt12(t)+' Waco · '+fmt12(c)+' Cartagena';}
+const SLOTS=[];for(let h=6;h<22;h++){SLOTS.push(String(h).padStart(2,'0')+':00');SLOTS.push(String(h).padStart(2,'0')+':30');}
+function currentWeek(){const now=new Date();const t=Date.UTC(now.getFullYear(),now.getMonth(),now.getDate());for(const w of WEEKS){if(t<=d2(w.end).getTime())return w.n;}return 9;}
+function weekOptions(sel){return WEEKS.map(w=>`<option value="${w.n}" ${w.n===sel?'selected':''}>Week ${w.n} · ${fmtDate(w.start)} – ${fmtDate(w.end)}</option>`).join('');}
+
+/* ---------- matching ---------- */
+function pairStatus(p,w){
+  const wk=(p.weeks||{})[w]||{};
+  const S=wk.S,A=wk.A;
+  if(S&&S.date&&S.time&&A&&A.date&&A.time){return(S.date===A.date&&S.time===A.time)?'green':'orange';}
+  return 'pending';
+}
+const pairWeekSel={};   // pairId -> selected week in UI
+function renderMatching(){
+  const host=$('matchLists');const cw=currentWeek();
+  const tracks=[['clinical','Clinical English','OSCE-style patient encounters'],['conversational','Conversational English','Cultural exchange & everyday fluency']];
+  host.innerHTML=tracks.map(([key,title,sub])=>{
+    const pairs=state.pairs.filter(p=>p.track===key);
+    const cards=pairs.map(p=>{
+      const w=pairWeekSel[p.id]||cw;
+      const st=pairStatus(p,w);
+      const wk=(p.weeks||{})[w]||{};
+      const nameCls=st==='green'?'matched':(st==='orange'?'mismatch':'pending');
+      const chip=st==='green'?'<span class="chip green"><span class="dot"></span>Confirmed</span>':st==='orange'?'<span class="chip orange"><span class="dot"></span>Different times</span>':'<span class="chip slate"><span class="dot"></span>Waiting on proposals</span>';
+      const sName=p.S&&p.S.name?esc(p.S.name):'— open seat —';
+      const aName=p.A&&p.A.name?esc(p.A.name):'— open seat —';
+      const dots=WEEKS.map(x=>{const s=pairStatus(p,x.n);const c=s==='green'?'var(--green2)':s==='orange'?'var(--orange)':'var(--border2)';return `<span title="Week ${x.n}: ${s}" style="width:10px;height:10px;border-radius:50%;background:${c};display:inline-block"></span>`;}).join(' ');
+      const side=(role,d,label)=>{
+        const cur=wk[role]||{};
+        return `<div class="sideBox"><h4>${label}</h4>
+        <div class="formRow">
+          <div class="field"><label>Name</label><input data-p="${p.id}" data-role="${role}" data-f="name" value="${esc((d||{}).name||'')}" placeholder="Full name"></div>
+          <div class="field"><label>Email</label><input data-p="${p.id}" data-role="${role}" data-f="email" value="${esc((d||{}).email||'')}" placeholder="you@school.edu"></div>
+          <button class="btn small" data-act="saveperson" data-p="${p.id}" data-role="${role}">Save</button>
+        </div>
+        <div class="formRow" style="margin-top:10px">
+          <div class="field"><label>Week ${w} — proposed date</label><select data-p="${p.id}" data-role="${role}" data-f="date">
+            <option value="">— pick a date —</option>${weekDates(w).map(dd=>`<option value="${dd}" ${cur.date===dd?'selected':''}>${fmtDate(dd)}</option>`).join('')}</select></div>
+          <div class="field"><label>Proposed time</label><select data-p="${p.id}" data-role="${role}" data-f="time">
+            <option value="">— pick a time —</option>${SLOTS.map(t=>`<option value="${t}" ${cur.time===t?'selected':''}>${slotLabel(w,t)}</option>`).join('')}</select></div>
+          <button class="btn primary small" data-act="propose" data-p="${p.id}" data-role="${role}">Propose</button>
+        </div>
+        ${cur.date&&cur.time?`<p class="note" style="margin:6px 0 0">Current proposal: <b>${fmtDate(cur.date)} · ${slotLabel(w,cur.time)}</b></p>`:''}
+        </div>`;
+      };
+      return `<div class="pairCard">
+        <div class="pairHead">
+          <span class="pairNames ${nameCls}">${sName} &nbsp;⇄&nbsp; ${aName}</span>${chip}
+          <span style="margin-left:auto;display:flex;align-items:center;gap:8px">
+            <span aria-hidden="true" style="display:inline-flex;gap:3px">${dots}</span>
+            <select data-act="pairweek" data-p="${p.id}" title="Choose week">${weekOptions(w)}</select>
+            <button class="btn small" data-act="delpair" data-p="${p.id}" title="Remove partnership">${p._confirmDel?'Confirm remove?':'✕'}</button>
+          </span>
+        </div>
+        <div class="grid2" style="margin-top:12px">
+          ${side('S',p.S,'SACNAS · Baylor')}
+          ${side('A',p.A,'ACAMC · Cartagena')}
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="card" style="margin-top:18px">
+      <div class="pairHead"><div><div class="eyebrow">${key==='clinical'?'Track A':'Track B'}</div><h3 style="margin:0">${title}</h3><p class="note" style="margin:2px 0 0">${sub} · ${pairs.length} partnership${pairs.length===1?'':'s'}</p></div>
+      <button class="btn primary" style="margin-left:auto" data-act="addpair" data-track="${key}">+ Add a partnership</button></div>
+      ${cards||'<div class="emptyBox">No partnerships yet in this track. Click <b>+ Add a partnership</b>, put your name and email on your school’s side, and a partner from the other school can claim the open seat.</div>'}
+    </div>`;
+  }).join('');
+  $('statPairs').textContent=state.pairs.length;
+}
+
+/* ---------- meet ---------- */
+function renderMeet(){
+  const w=parseInt($('meetWeek').value||currentWeek(),10);
+  const rows=state.pairs.map(p=>{
+    const st=pairStatus(p,w);if(st==='pending')return'';
+    const wk=(p.weeks||{})[w]||{};const d=st==='green'?wk.S:null;
+    const names=`${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')}`;
+    const link=p.meetLink?`<a class="btn primary small" href="${esc(p.meetLink)}" target="_blank" rel="noopener">Join ▶</a>`:'<span class="note">no link yet</span>';
+    return `<tr><td>${names}</td><td><span class="chip ${st}"><span class="dot"></span>${st==='green'?'Confirmed':'Different times'}</span></td>
+    <td class="mono">${d?fmtDate(d.date)+' · '+slotLabel(w,d.time):'—'}</td><td>${st==='green'?link:''}</td></tr>`;
+  }).filter(Boolean).join('');
+  $('meetTable').innerHTML='<tr><th>Partnership</th><th>Status</th><th>When</th><th>Join</th></tr>'+(rows||'<tr><td colspan="4" class="note">No proposals for this week yet — agree on a slot on the Partner Matching page and confirmed meetings will appear here.</td></tr>');
+  $('meetPairs').innerHTML=state.pairs.length?state.pairs.map(p=>`<div class="formRow" style="border-bottom:1px solid var(--border);padding:10px 0">
+    <div style="flex:1 1 220px;font-weight:600">${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')} <span class="note">(${p.track})</span></div>
+    <div class="field" style="flex:2 1 260px"><label>Google Meet link</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://meet.google.com/xxx-xxxx-xxx"></div>
+    <button class="btn small" data-act="savemeet" data-p="${p.id}">Save link</button>
+    ${p.meetLink?`<a class="btn primary small" href="${esc(p.meetLink)}" target="_blank" rel="noopener">Join ▶</a>`:''}
+  </div>`).join(''):'<div class="emptyBox">Partnerships created on the Matching page will appear here.</div>';
+}
+
+/* ---------- feedback ---------- */
+const COORD_EMAILS='cpemscome.acamc@gmail.com,lito_guerrero1@baylor.edu,vicepresidenciainternacamc@gmail.com';
+function renderComments(){
+  $('commentList').innerHTML=state.comments.length?state.comments.map(c=>`<div class="commentItem">
+    <div class="commentMeta"><b>${esc(c.name||'Anonymous')}</b> · ${esc(c.role||'')} · ${esc(c.ts||'')}</div><div>${esc(c.text)}</div></div>`).join('')
+    :'<div class="emptyBox">No comments yet — be the first voice on the bridge.</div>';
+}
+
+/* ---------- survey ---------- */
+const DIMS=[['pron','Pronunciation & clarity'],['flu','Fluency & pace'],['voc','Vocabulary range'],['gra','Grammar accuracy'],['lis','Listening comprehension'],['cli','Clinical communication (clinical track — else skip)']];
+const svScores={};
+function renderRatings(){
+  $('ratingBlock').innerHTML=DIMS.map(([k,lab])=>`<div class="ratingRow"><span class="rlab">${lab}</span>
+  <span class="opts">${[1,2,3,4,5].map(n=>`<button type="button" data-dim="${k}" data-n="${n}" class="${svScores[k]===n?'sel':''}">${n}</button>`).join('')}
+  <button type="button" data-dim="${k}" data-n="0" class="${svScores[k]===0?'sel':''}" style="width:auto;padding:0 10px" title="Not applicable">n/a</button></span></div>`).join('');
+}
+function renderSurveys(){
+  const rows=state.surveys.map(s=>{
+    const vals=DIMS.map(([k])=>s.scores[k]).filter(v=>v>0);
+    const avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):'—';
+    return `<tr><td>${esc(s.ts)}</td><td>${esc(s.rater)}<br><span class="note">${esc(s.role)}</span></td><td>${esc(s.partner)}</td><td class="mono">W${esc(s.week)}</td>
+    <td class="mono">${DIMS.map(([k])=>s.scores[k]>0?s.scores[k]:'·').join(' ')}</td><td class="mono"><b>${avg}</b></td><td title="${esc(s.comment||'')}">${esc((s.comment||'').slice(0,60))}${(s.comment||'').length>60?'…':''}</td></tr>`;
+  }).join('');
+  $('surveyTable').innerHTML='<tr><th>Date</th><th>Rater</th><th>Partner rated</th><th>Wk</th><th title="Pron Flu Voc Gra Lis Cli">P F V G L C</th><th>Avg</th><th>Comment</th></tr>'+(rows||'<tr><td colspan="7" class="note">No surveys yet. Checkpoints: week 1 (baseline), week 5 (midpoint), week 9 (final).</td></tr>');
+}
+
+/* ---------- materials ---------- */
+let clinView='full';
+function benchHTML(c){return '<h4>Interaction benchmarks — accomplish these during the encounter</h4><ul>'+c.benchmarks.map(b=>`<li class="benchItem">☐ ${esc(b)}</li>`).join('')+'</ul>';}
+function renderMaterials(){
+  const w=parseInt($('matWeek').value||currentWeek(),10);
+  const c=CLINICAL[w-1],v=CONV[w-1];
+  $('clinTitle').textContent='Week '+w+' · '+c.t;
+  $('convTitle').textContent='Week '+w+' · '+v.t;
+  if(clinView==='bench'){
+    $('clinBody').innerHTML='<p class="note"><b>ACAMC view</b> — this is all you should see before the call. Open the full narrative only if truly stuck.</p><h4>Door chart</h4><p>'+esc(c.door)+'</p>'+benchHTML(c);
+  }else{
+    $('clinBody').innerHTML='<p class="note"><b>SACNAS view</b> — full guideline for your split screen. Focus: '+esc(c.focus)+'</p>'
+    +'<h4>Door chart (shared with your partner)</h4><p>'+esc(c.door)+'</p>'
+    +benchHTML(c)
+    +'<h4>Patient narrative & how to run the station (SACNAS only)</h4>'+c.narrative.map(p=>'<p>'+esc(p)+'</p>').join('')
+    +'<h4>Answers & explanations for the debrief</h4><ul>'+c.answers.map(a=>'<li>'+esc(a)+'</li>').join('')+'</ul>'
+    +'<h4>Model phrases to highlight</h4><ul>'+c.phrases.map(a=>'<li>'+esc(a)+'</li>').join('')+'</ul>'
+    +'<h4>Vocabulary to drill</h4><ul>'+c.vocab.map(x=>'<li><b>'+esc(x[0])+'</b> — '+esc(x[1])+'</li>').join('')+'</ul>';
+  }
+  $('convBody').innerHTML='<p class="note">Grammar focus: <b>'+esc(v.grammar)+'</b></p>'
+  +'<h4>Pattern examples</h4><ul>'+v.gex.map(x=>'<li><i>'+esc(x)+'</i></li>').join('')+'</ul>'
+  +'<h4>Warm-up (5 min)</h4><p>'+esc(v.warmup)+'</p>'
+  +'<h4>Prompts — pick freely, follow tangents</h4><ul>'+v.prompts.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
+  +'<h4>Idioms of the week</h4><ul>'+v.idioms.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'
+  +'<h4>Session benchmarks</h4><ul>'+v.bench.map(x=>'<li class="benchItem">☐ '+esc(x)+'</li>').join('')+'</ul>';
+}
+
+/* ---------- PDFs ---------- */
+function pdfDoc(){const {jsPDF}=window.jspdf;const doc=new jsPDF({unit:'pt',format:'letter'});doc._y=64;return doc;}
+function pdfLine(doc,txt,size,style,color,indent,gap){
+  doc.setFont('helvetica',style||'normal');doc.setFontSize(size);doc.setTextColor.apply(doc,color||[31,42,51]);
+  const maxW=612-64-64-(indent||0);
+  const lines=doc.splitTextToSize(txt,maxW);
+  for(const ln of lines){
+    if(doc._y>792-64){doc.addPage();doc._y=64;}
+    doc.text(ln,64+(indent||0),doc._y);doc._y+=size*1.35;
+  }
+  doc._y+=gap??6;
+}
+function pdfHead(doc,title,sub){
+  doc.setFillColor(20,83,45);doc.rect(0,0,612,6,'F');doc.setFillColor(201,162,39);doc.rect(0,6,612,2,'F');
+  doc._y=64;pdfLine(doc,'PUENTE · Cartagena–Baylor Medical English Exchange',9,'bold',[154,123,28],0,2);
+  pdfLine(doc,title,20,'bold',[20,83,45],0,2);pdfLine(doc,sub,10.5,'italic',[91,107,119],0,10);
+}
+function pdfList(doc,items,checkbox){items.forEach(it=>pdfLine(doc,(checkbox?'[  ]  ':'•  ')+it,10.5,'normal',null,12,2));doc._y+=6;}
+function pdfSection(doc,t){doc._y+=4;pdfLine(doc,t.toUpperCase(),11,'bold',[30,122,74],0,4);}
+function offerPdf(doc,filename){
+  try{doc.save(filename);toast('PDF downloaded ✓');}
+  catch(e){toast('Could not generate the PDF.');}
+}
+function makeClinFull(w){const c=CLINICAL[w-1];const doc=pdfDoc();
+  pdfHead(doc,'Week '+w+' Clinical Case — '+c.t,'FULL GUIDELINE · SACNAS (Baylor) side · Focus: '+c.focus+' · '+fmtDate(WEEKS[w-1].start)+' – '+fmtDate(WEEKS[w-1].end)+', 2026');
+  pdfSection(doc,'Door chart (read aloud to open the station)');pdfLine(doc,c.door,10.5);
+  pdfSection(doc,'Interaction benchmarks (your partner has only this list)');pdfList(doc,c.benchmarks,true);
+  pdfSection(doc,'Patient narrative & how to run the station');c.narrative.forEach(p=>pdfLine(doc,p,10.5));
+  pdfSection(doc,'Answers & explanations for the debrief');pdfList(doc,c.answers);
+  pdfSection(doc,'Model phrases to highlight');pdfList(doc,c.phrases);
+  pdfSection(doc,'Vocabulary to drill');pdfList(doc,c.vocab.map(x=>x[0]+' — '+x[1]));
+  return doc;}
+function makeClinBench(w){const c=CLINICAL[w-1];const doc=pdfDoc();
+  pdfHead(doc,'Week '+w+' Clinical Case — '+c.t,'BENCHMARK SHEET · ACAMC (Cartagena) side · Open the full narrative only if truly stuck');
+  pdfSection(doc,'Door chart');pdfLine(doc,c.door,10.5);
+  pdfSection(doc,'Your benchmarks — accomplish these during the encounter');pdfList(doc,c.benchmarks,true);
+  pdfSection(doc,'After the call');pdfList(doc,['Debrief benchmark-by-benchmark with your partner','Note 5 new words or phrases in your own list','Agree next week’s slot and enter it on the Partner Matching page']);
+  return doc;}
+function makeConv(w){const v=CONV[w-1];const doc=pdfDoc();
+  pdfHead(doc,'Week '+w+' Conversation Set — '+v.t,'CONVERSATIONAL TRACK · both partners · Grammar focus: '+v.grammar);
+  pdfSection(doc,'Pattern examples');pdfList(doc,v.gex);
+  pdfSection(doc,'Warm-up (5 min)');pdfLine(doc,v.warmup,10.5);
+  pdfSection(doc,'Prompts — pick freely, follow tangents');pdfList(doc,v.prompts);
+  pdfSection(doc,'Idioms of the week');pdfList(doc,v.idioms);
+  pdfSection(doc,'Session benchmarks');pdfList(doc,v.bench,true);
+  return doc;}
+
+/* ---------- calendar ---------- */
+function renderCalendar(){
+  $('calendarTable').innerHTML='<tr><th>Week</th><th>Dates (2026)</th><th>Clinical case</th><th>Conversation theme</th><th></th></tr>'
+  +WEEKS.map(w=>`<tr><td class="mono"><b>${w.n}</b></td><td class="mono">${fmtDate(w.start)} – ${fmtDate(w.end)}</td>
+  <td>${esc(CLINICAL[w.n-1].t)}</td><td>${esc(CONV[w.n-1].t)}</td>
+  <td>${[1,5,9].includes(w.n)?'<span class="chip goldc">survey week</span>':''}${w.n>=8?' <span class="chip slate">Cartagena +1h</span>':''}</td></tr>`).join('');
+}
+
+/* ---------- nav ---------- */
+const PAGES=['home','instructions','matching','materials','meet','survey','feedback'];
+function show(pg){
+  if(!PAGES.includes(pg))pg='home';
+  PAGES.forEach(p=>{$('page-'+p).classList.toggle('visible',p===pg);});
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.nav===pg));
+  location.hash=pg;window.scrollTo({top:0});
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click',e=>{
+  const nav=e.target.closest('[data-nav]');if(nav){e.preventDefault();show(nav.dataset.nav);return;}
+  const el=e.target.closest('button,[data-act]');if(!el)return;
+  if(el.dataset.dim){const k=el.dataset.dim,n=parseInt(el.dataset.n,10);svScores[k]=(svScores[k]===n)?undefined:n;renderRatings();return;}
+  const act=el.dataset.act,p=state.pairs.find(x=>x.id===el.dataset.p);
+  if(act==='addpair'){put('pairs/'+uid(),{track:el.dataset.track,meetLink:'',created:Date.now()},'Partnership added ✓');}
+  if(act==='delpair'&&p){if(!p._confirmDel){p._confirmDel=true;renderMatching();setTimeout(()=>{p._confirmDel=false;try{renderMatching();}catch(_){}} ,4000);}else{delPath('pairs/'+p.id,'Partnership removed');}}
+  if(act==='saveperson'&&p){const r=el.dataset.role;
+    const name=document.querySelector(`input[data-p="${p.id}"][data-role="${r}"][data-f="name"]`).value.trim().slice(0,80);
+    const email=document.querySelector(`input[data-p="${p.id}"][data-role="${r}"][data-f="email"]`).value.trim().slice(0,120);
+    if(!name){toast('Add a name first');return;}
+    put('pairs/'+p.id+'/'+r,{name,email},'Saved '+name+' ✓');}
+  if(act==='propose'&&p){const r=el.dataset.role;
+    const date=document.querySelector(`select[data-p="${p.id}"][data-role="${r}"][data-f="date"]`).value;
+    const time=document.querySelector(`select[data-p="${p.id}"][data-role="${r}"][data-f="time"]`).value;
+    if(!date||!time){toast('Pick both a date and a time');return;}
+    const w=pairWeekSel[p.id]||currentWeek();
+    p.weeks=p.weeks||{};p.weeks[w]=p.weeks[w]||{};p.weeks[w][r]={date,time};
+    const st=pairStatus(p,w);
+    put('pairs/'+p.id+'/weeks/'+w+'/'+r,{date,time},st==='green'?'Time confirmed — you match! ✓':'Proposal saved — waiting for your partner to match it');}
+  if(act==='savemeet'&&p){const inp=document.querySelector(`input[data-act="meetlink"][data-p="${p.id}"]`);let v=inp.value.trim().slice(0,200);
+    if(v&&!/^https:\/\/meet\.google\.com\//.test(v)){toast('That doesn’t look like a Google Meet link (https://meet.google.com/…)');return;}
+    put('pairs/'+p.id+'/meetLink',v,'Meet link saved ✓');}
+  if(el.id==='fbPost'){const name=$('fbName').value.trim().slice(0,80),text=$('fbText').value.trim().slice(0,1000);
+    if(!text){toast('Write a comment first');return;}
+    post('comments',{name,role:$('fbRole').value,text,ts:new Date().toISOString().slice(0,10),at:Date.now()},'Comment posted ✓');
+    $('fbText').value='';}
+  if(el.id==='fbMail'){const text=$('fbText').value.trim()||((state.comments[0]||{}).text||'');
+    const body='PUENTE feedback from '+($('fbName').value.trim()||'a participant')+' ('+$('fbRole').value+'):\n\n'+text+'\n\n— sent from the PUENTE site';
+    location.href='mailto:'+COORD_EMAILS+'?subject='+encodeURIComponent('PUENTE — comment/suggestion')+'&body='+encodeURIComponent(body);}
+  if(el.id==='svSubmit'){
+    const rater=$('svRater').value.trim().slice(0,80),partner=$('svPartner').value.trim().slice(0,80);
+    if(!rater||!partner){toast('Add your name and your partner’s name');return;}
+    const scores={};let any=false;DIMS.forEach(([k])=>{scores[k]=svScores[k]??0;if(scores[k]>0)any=true;});
+    if(!any){toast('Rate at least one category');return;}
+    const rec={ts:new Date().toISOString().slice(0,10),at:Date.now(),rater,role:$('svRole').value,partner,week:$('svWeek').value,scores,comment:$('svComment').value.trim().slice(0,600)};
+    const to=$('svEmail').value;
+    if(to){const lines=DIMS.map(([k,lab])=>lab+': '+(scores[k]>0?scores[k]+'/5':'n/a')).join('\n');
+      const body='PUENTE Proficiency Survey — Week '+rec.week+'\nRater: '+rater+' ('+rec.role+')\nPartner rated: '+partner+'\n\n'+lines+'\n\nComments: '+(rec.comment||'—')+'\n\n— sent from the PUENTE site';
+      location.href='mailto:'+to+'?subject='+encodeURIComponent('PUENTE Survey — '+partner+' (Week '+rec.week+')')+'&body='+encodeURIComponent(body);}
+    post('surveys',rec,'Survey submitted ✓');
+    Object.keys(svScores).forEach(k=>delete svScores[k]);$('svComment').value='';renderRatings();}
+  if(el.id==='viewFull'||el.id==='viewBench'){clinView=el.id==='viewBench'?'bench':'full';$('viewFull').classList.toggle('on',clinView==='full');$('viewBench').classList.toggle('on',clinView==='bench');renderMaterials();}
+  if(el.id==='dlClinFull'){offerPdf(makeClinFull(parseInt($('matWeek').value,10)),'PUENTE_W'+$('matWeek').value+'_Clinical_FullGuideline_SACNAS.pdf');}
+  if(el.id==='dlClinBench'){offerPdf(makeClinBench(parseInt($('matWeek').value,10)),'PUENTE_W'+$('matWeek').value+'_Clinical_Benchmarks_ACAMC.pdf');}
+  if(el.id==='dlConv'){offerPdf(makeConv(parseInt($('matWeek').value,10)),'PUENTE_W'+$('matWeek').value+'_Conversation_Set.pdf');}
+});
+document.addEventListener('change',e=>{
+  if(e.target.id==='matWeek')renderMaterials();
+  if(e.target.id==='meetWeek')renderMeet();
+  if(e.target.dataset&&e.target.dataset.act==='pairweek'){pairWeekSel[e.target.dataset.p]=parseInt(e.target.value,10);renderMatching();}
+});
+
+function renderAll(){renderMatching();renderMeet();renderComments();renderRatings();renderSurveys();renderMaterials();renderCalendar();}
+
+/* ---------- init ---------- */
+(function init(){
+  const cw=currentWeek();
+  $('matWeek').innerHTML=weekOptions(cw);$('meetWeek').innerHTML=weekOptions(cw);
+  renderAll();
+  show((location.hash||'#home').slice(1));
+  refresh(true);
+  setInterval(()=>refresh(false),12000);
+  document.addEventListener('focusout',()=>{if(pendingRender){pendingRender=false;setTimeout(()=>{if(!typingNow())renderAll();},150);}});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh(false);});
+})();
+</script>
+
+</body>
+</html>
