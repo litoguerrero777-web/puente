@@ -248,7 +248,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
         <li><b>Choose your track.</b> Cartagena students pick <i>Clinical English</i> (OSCE-style patient encounters) or <i>Conversational English</i> (cultural exchange and everyday fluency). You keep the same track for the whole pilot.</li>
         <li><b>Register on the Partner Matching page.</b> Add your name and email under your school and track. Partners are <b>set for the full pilot</b> — no weekly rotation — so you build rapport and can track real progress.</li>
         <li><b>Propose a meeting time each week.</b> Both partners pick a date and a time slot from the template menus (no free-typing, so there are never punctuation or format mix-ups). When both selections are identical the partnership row turns <span class="chip green"><span class="dot"></span>Confirmed</span>; if they differ it turns <span class="chip orange"><span class="dot"></span>Different times</span> until you adjust.</li>
-        <li><b>Meet once a week on Google Meet</b> (45–60 minutes). Your pair's Meet link lives on the Meet Links page — one click to join. Aim to confirm your slot by Friday of the week before.</li>
+        <li><b>Meet once a week by video</b> (45–60 minutes). Your pair's standing room link lives on the Meet Links page — one click to join, no account or host needed. Aim to confirm your slot by Friday of the week before.</li>
         <li><b>Rate and reflect.</b> After week 1 and week 4 (the final week), each partner completes the Proficiency Survey about the other — a baseline and a final picture of growth.</li>
       </ol>
     </div>
@@ -345,7 +345,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
   <div class="wrap">
     <div class="eyebrow">Reuniones · Meetings</div>
     <h2>Meet Links</h2>
-    <p style="max-width:68ch">Google doesn't allow Meet calls to be embedded inside other websites, so this page is the next best thing: every partnership keeps one standing Meet link here, and each week's confirmed meetings appear below with a one-click <b>Join</b> button.</p>
+    <p style="max-width:68ch">Every partnership has its own standing video room — one click to join, no account and no host needed, the same link all four weeks. Each week's confirmed meetings appear below with their <b>Join</b> button.</p>
     <div class="card">
       <h3>This week's confirmed meetings</h3>
       <div class="formRow"><div class="field" style="max-width:260px"><label for="meetWeek">Week</label><select id="meetWeek"></select></div></div>
@@ -353,7 +353,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
     </div>
     <div class="card">
       <h3>Partnership links</h3>
-      <p class="note">Create a room once at <a href="https://meet.google.com/new" target="_blank" rel="noopener">meet.google.com/new</a>, paste it for your pair, and reuse it every week.</p>
+      <p class="note">Rooms run on Jitsi Meet: open your pair's link and you're in — the first person to arrive taps a quick moderator sign-in with any Google account, then the call starts. Works in any browser or the free Jitsi Meet phone app.</p>
       <div id="meetPairs"></div>
     </div>
   </div>
@@ -719,7 +719,7 @@ function renderMeet(){
   $('meetTable').innerHTML='<tr><th>Partnership</th><th>Status</th><th>When</th><th>Join</th></tr>'+(rows||'<tr><td colspan="4" class="note">No proposals for this week yet — agree on a slot on the Partner Matching page and confirmed meetings will appear here.</td></tr>');
   $('meetPairs').innerHTML=state.pairs.length?state.pairs.map(p=>`<div class="formRow" style="border-bottom:1px solid var(--border);padding:10px 0">
     <div style="flex:1 1 220px;font-weight:600">${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')} <span class="note">(${p.track})</span></div>
-    <div class="field" style="flex:2 1 260px"><label>Google Meet link</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://meet.google.com/xxx-xxxx-xxx"></div>
+    <div class="field" style="flex:2 1 260px"><label>Room link (Jitsi or Google Meet)</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://meet.jit.si/PUENTE-..."></div>
     <button class="btn small" data-act="savemeet" data-p="${p.id}">Save link</button>
     ${p.meetLink?`<a class="btn primary small" href="${esc(p.meetLink)}" target="_blank" rel="noopener">Join ▶</a>`:''}
   </div>`).join(''):'<div class="emptyBox">Partnerships created on the Matching page will appear here.</div>';
@@ -864,7 +864,7 @@ document.addEventListener('click',e=>{
     const st=pairStatus(p,w);
     put('pairs/'+p.id+'/weeks/'+w+'/'+r,{date,time},st==='green'?'Time confirmed — you match! ✓':'Proposal saved — waiting for your partner to match it');}
   if(act==='savemeet'&&p){const inp=document.querySelector(`input[data-act="meetlink"][data-p="${p.id}"]`);let v=inp.value.trim().slice(0,200);
-    if(v&&!/^https:\/\/meet\.google\.com\//.test(v)){toast('That doesn’t look like a Google Meet link (https://meet.google.com/…)');return;}
+    if(v&&!/^https:\/\/(meet\.jit\.si|meet\.google\.com)\//.test(v)){toast('Use a Jitsi or Google Meet link (https://meet.jit.si/…)');return;}
     put('pairs/'+p.id+'/meetLink',v,'Meet link saved ✓');}
   if(el.id==='fbPost'){const name=$('fbName').value.trim().slice(0,80),text=$('fbText').value.trim().slice(0,1000);
     if(!text){toast('Write a comment first');return;}
