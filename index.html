@@ -297,7 +297,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
   <div class="wrap">
     <div class="eyebrow">Encuentra tu pareja · Partner matching</div>
     <h2>Partner Matching</h2>
-    <p style="max-width:68ch">Add yourself under your track, join a partnership, and propose a meeting time for each week. A partnership turns <b style="color:var(--green2)">green</b> when both partners choose the same date and time, and <b style="color:var(--orange)">orange</b> while the two proposals differ.</p>
+    <p style="max-width:68ch">Find your partnership (or add a new one) and propose a meeting time for each week. A partnership turns <b style="color:var(--green2)">green</b> when both partners choose the same date and time, and <b style="color:var(--orange)">orange</b> while the two proposals differ.</p>
     <div id="matchLists"></div>
   </div>
 </section>
@@ -651,9 +651,9 @@ function pairStatus(p,w){
 const pairWeekSel={};   // pairId -> selected week in UI
 function renderMatching(){
   const host=$('matchLists');const cw=currentWeek();
-  const tracks=[['clinical','Clinical English','OSCE-style patient encounters'],['conversational','Conversational English','Cultural exchange & everyday fluency']];
+  const tracks=[['all','Partnerships','Everyone in one list']];
   host.innerHTML=tracks.map(([key,title,sub])=>{
-    const pairs=state.pairs.filter(p=>p.track===key);
+    const pairs=state.pairs;
     const cards=pairs.map(p=>{
       const w=pairWeekSel[p.id]||cw;
       const st=pairStatus(p,w);
@@ -697,9 +697,9 @@ function renderMatching(){
       </div>`;
     }).join('');
     return `<div class="card" style="margin-top:18px">
-      <div class="pairHead"><div><div class="eyebrow">${key==='clinical'?'Track A':'Track B'}</div><h3 style="margin:0">${title}</h3><p class="note" style="margin:2px 0 0">${sub} · ${pairs.length} partnership${pairs.length===1?'':'s'}</p></div>
-      <button class="btn primary" style="margin-left:auto" data-act="addpair" data-track="${key}">+ Add a partnership</button></div>
-      ${cards||'<div class="emptyBox">No partnerships yet in this track. Click <b>+ Add a partnership</b>, put your name and email on your school’s side, and a partner from the other school can claim the open seat.</div>'}
+      <div class="pairHead"><div><div class="eyebrow">PUENTE pilot</div><h3 style="margin:0">${title}</h3><p class="note" style="margin:2px 0 0">${sub} · ${pairs.length} partnership${pairs.length===1?'':'s'}</p></div>
+      <button class="btn primary" style="margin-left:auto" data-act="addpair" data-track="">+ Add a partnership</button></div>
+      ${cards||'<div class="emptyBox">No partnerships yet. Click <b>+ Add a partnership</b>, put your name and email on your school’s side, and a partner from the other school can claim the open seat.</div>'}
     </div>`;
   }).join('');
   $('statPairs').textContent=state.pairs.length;
@@ -718,7 +718,7 @@ function renderMeet(){
   }).filter(Boolean).join('');
   $('meetTable').innerHTML='<tr><th>Partnership</th><th>Status</th><th>When</th><th>Join</th></tr>'+(rows||'<tr><td colspan="4" class="note">No proposals for this week yet — agree on a slot on the Partner Matching page and confirmed meetings will appear here.</td></tr>');
   $('meetPairs').innerHTML=state.pairs.length?state.pairs.map(p=>`<div class="formRow" style="border-bottom:1px solid var(--border);padding:10px 0">
-    <div style="flex:1 1 220px;font-weight:600">${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')} <span class="note">(${p.track})</span></div>
+    <div style="flex:1 1 220px;font-weight:600">${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')}${p.track?' <span class="note">('+p.track+')</span>':''}</div>
     <div class="field" style="flex:2 1 260px"><label>Room link (Jitsi or Google Meet)</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://meet.jit.si/PUENTE-..."></div>
     <button class="btn small" data-act="savemeet" data-p="${p.id}">Save link</button>
     ${p.meetLink?`<a class="btn primary small" href="${esc(p.meetLink)}" target="_blank" rel="noopener">Join ▶</a>`:''}
