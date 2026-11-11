@@ -364,7 +364,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
   <div class="wrap">
     <div class="eyebrow">Evaluación · Proficiency survey</div>
     <h2>Proficiency Survey</h2>
-    <p style="max-width:68ch">After week 1 (baseline) and week 4 (final), rate your partner's English performance using the scale below. Submissions are saved on this page for the coordinators, and you can also send a copy by email to the address you choose.</p>
+    <p style="max-width:68ch">After week 1 (baseline) and week 4 (final), rate your partner's English performance using the scale below. Nothing is posted publicly: each submission is emailed automatically and privately to the program coordinator (Lito) and to the partner you select.</p>
 
     <div class="card">
       <h3>The scale</h3>
@@ -381,28 +381,19 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
     <div class="card">
       <h3>Rate your partner</h3>
       <div class="formRow">
-        <div class="field"><label for="svRater">Your name</label><input id="svRater" placeholder="e.g. María Pérez"></div>
-        <div class="field"><label for="svRole">You are…</label><select id="svRole"><option value="SACNAS">SACNAS · Baylor</option><option value="ACAMC">ACAMC · Cartagena</option></select></div>
-        <div class="field"><label for="svPartner">Partner's name</label><input id="svPartner" placeholder="Who you're rating"></div>
+        <div class="field"><label for="svRater">You are</label><select id="svRater"><option value="">— select —</option></select></div>
+        <div class="field"><label for="svPartner">Send to: your partner (the person you're rating)</label><select id="svPartner"><option value="">— select —</option></select></div>
         <div class="field" style="max-width:150px"><label for="svWeek">Checkpoint</label><select id="svWeek"><option value="1">Week 1 · baseline</option><option value="4">Week 4 · final</option></select></div>
       </div>
       <div id="ratingBlock" style="margin-top:16px"></div>
       <div class="field" style="margin-top:6px"><label for="svComment">Comments — wins, struggles, what to practice next</label><textarea id="svComment" rows="3" placeholder="Optional but very helpful"></textarea></div>
       <div class="formRow" style="margin-top:12px">
-        <div class="field" style="max-width:340px"><label for="svEmail">Also send a copy by email to</label><select id="svEmail">
-          <option value="">— don't email, just save —</option>
-          <option value="lito_guerrero1@baylor.edu">SACNAS · lito_guerrero1@baylor.edu</option>
-          <option value="cpemscome.acamc@gmail.com">ACAMC · cpemscome.acamc@gmail.com</option>
-          <option value="vicepresidenciainternacamc@gmail.com">ACAMC Vicepresidencia · vicepresidenciainternacamc@gmail.com</option>
-        </select></div>
-        <button class="btn primary" id="svSubmit">Submit survey</button>
+        <button class="btn primary" id="svSubmit">Submit — emails your partner &amp; the coordinator</button>
+        <span class="note">Sent privately by email to the coordinator (Lito) and the partner you selected. Not shown anywhere on this site.</span>
       </div>
     </div>
 
-    <div class="card">
-      <h3>Submitted surveys</h3>
-      <div class="tableScroll"><table class="weekTable" id="surveyTable"></table></div>
-    </div>
+
   </div>
 </section>
 
@@ -741,14 +732,21 @@ function renderRatings(){
   <span class="opts">${[1,2,3,4,5].map(n=>`<button type="button" data-dim="${k}" data-n="${n}" class="${svScores[k]===n?'sel':''}">${n}</button>`).join('')}
   <button type="button" data-dim="${k}" data-n="0" class="${svScores[k]===0?'sel':''}" style="width:auto;padding:0 10px" title="Not applicable">n/a</button></span></div>`).join('');
 }
+const COORD_EMAIL='lito_guerrero1@baylor.edu';
+function participants(){
+  const out=[];
+  state.pairs.forEach(p=>{
+    if(p.S&&p.S.name)out.push({name:p.S.name,email:p.S.email||'',partnerEmail:(p.A&&p.A.email)||''});
+    if(p.A&&p.A.name)out.push({name:p.A.name,email:p.A.email||'',partnerEmail:(p.S&&p.S.email)||''});
+  });
+  return out.filter(x=>x.email).sort((a,b)=>a.name.localeCompare(b.name));
+}
 function renderSurveys(){
-  const rows=state.surveys.map(s=>{
-    const vals=DIMS.map(([k])=>s.scores[k]).filter(v=>v>0);
-    const avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):'—';
-    return `<tr><td>${esc(s.ts)}</td><td>${esc(s.rater)}<br><span class="note">${esc(s.role)}</span></td><td>${esc(s.partner)}</td><td class="mono">W${esc(s.week)}</td>
-    <td class="mono">${DIMS.map(([k])=>s.scores[k]>0?s.scores[k]:'·').join(' ')}</td><td class="mono"><b>${avg}</b></td><td title="${esc(s.comment||'')}">${esc((s.comment||'').slice(0,60))}${(s.comment||'').length>60?'…':''}</td></tr>`;
-  }).join('');
-  $('surveyTable').innerHTML='<tr><th>Date</th><th>Rater</th><th>Partner rated</th><th>Wk</th><th title="Pron Flu Voc Gra Lis Cli">P F V G L C</th><th>Avg</th><th>Comment</th></tr>'+(rows||'<tr><td colspan="7" class="note">No surveys yet. Checkpoints: week 1 (baseline) and week 4 (final).</td></tr>');
+  const ppl=participants();
+  const opt=sel=>'<option value="">— select —</option>'+ppl.map(x=>`<option value="${esc(x.email)}" ${sel===x.email?'selected':''}>${esc(x.name)}</option>`).join('');
+  const r=$('svRater'),pt=$('svPartner');
+  const rv=r.value,pv=pt.value;
+  r.innerHTML=opt(rv);pt.innerHTML=opt(pv);
 }
 
 /* ---------- materials ---------- */
@@ -874,17 +872,21 @@ document.addEventListener('click',e=>{
     const body='PUENTE feedback from '+($('fbName').value.trim()||'a participant')+' ('+$('fbRole').value+'):\n\n'+text+'\n\n— sent from the PUENTE site';
     location.href='mailto:'+COORD_EMAILS+'?subject='+encodeURIComponent('PUENTE — comment/suggestion')+'&body='+encodeURIComponent(body);}
   if(el.id==='svSubmit'){
-    const rater=$('svRater').value.trim().slice(0,80),partner=$('svPartner').value.trim().slice(0,80);
-    if(!rater||!partner){toast('Add your name and your partner’s name');return;}
+    const ppl=participants();
+    const rp=ppl.find(x=>x.email===$('svRater').value),pp=ppl.find(x=>x.email===$('svPartner').value);
+    if(!rp||!pp){toast('Select your name and your partner');return;}
     const scores={};let any=false;DIMS.forEach(([k])=>{scores[k]=svScores[k]??0;if(scores[k]>0)any=true;});
     if(!any){toast('Rate at least one category');return;}
-    const rec={ts:new Date().toISOString().slice(0,10),at:Date.now(),rater,role:$('svRole').value,partner,week:$('svWeek').value,scores,comment:$('svComment').value.trim().slice(0,600)};
-    const to=$('svEmail').value;
-    if(to){const lines=DIMS.map(([k,lab])=>lab+': '+(scores[k]>0?scores[k]+'/5':'n/a')).join('\n');
-      const body='PUENTE Proficiency Survey — Week '+rec.week+'\nRater: '+rater+' ('+rec.role+')\nPartner rated: '+partner+'\n\n'+lines+'\n\nComments: '+(rec.comment||'—')+'\n\n— sent from the PUENTE site';
-      location.href='mailto:'+to+'?subject='+encodeURIComponent('PUENTE Survey — '+partner+' (Week '+rec.week+')')+'&body='+encodeURIComponent(body);}
-    post('surveys',rec,'Survey submitted ✓');
-    Object.keys(svScores).forEach(k=>delete svScores[k]);$('svComment').value='';renderRatings();}
+    const week=$('svWeek').value,comment=$('svComment').value.trim().slice(0,600);
+    const payload={_subject:'PUENTE Survey — '+pp.name+' rated by '+rp.name+' (Week '+week+')',_cc:pp.email,_template:'table',Rater:rp.name+' ('+rp.email+')','Partner rated':pp.name+' ('+pp.email+')',Checkpoint:'Week '+week};
+    DIMS.forEach(([k,lab])=>{payload[lab]=scores[k]>0?scores[k]+'/5':'n/a';});
+    payload.Comments=comment||'—';
+    el.disabled=true;toast('Sending…');
+    fetch('https://formsubmit.co/ajax/'+COORD_EMAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+    .then(r=>r.json()).then(j=>{el.disabled=false;
+      if(j&&(j.success===true||j.success==='true')){toast('Survey sent privately to your partner and the coordinator ✓');Object.keys(svScores).forEach(k=>delete svScores[k]);$('svComment').value='';renderRatings();}
+      else{toast((j&&j.message)?String(j.message).slice(0,120):'Could not send — please try again.');}})
+    .catch(()=>{el.disabled=false;toast('Could not send — please check your connection.');});}
   if(el.id==='viewFull'||el.id==='viewBench'){clinView=el.id==='viewBench'?'bench':'full';$('viewFull').classList.toggle('on',clinView==='full');$('viewBench').classList.toggle('on',clinView==='bench');renderMaterials();}
   if(el.id==='dlClinFull'){offerPdf(makeClinFull(parseInt($('matWeek').value,10)),'PUENTE_W'+$('matWeek').value+'_Clinical_FullGuideline_SACNAS.pdf');}
   if(el.id==='dlClinBench'){offerPdf(makeClinBench(parseInt($('matWeek').value,10)),'PUENTE_W'+$('matWeek').value+'_Clinical_Benchmarks_ACAMC.pdf');}
@@ -893,6 +895,7 @@ document.addEventListener('click',e=>{
 document.addEventListener('change',e=>{
   if(e.target.id==='matWeek')renderMaterials();
   if(e.target.id==='meetWeek')renderMeet();
+  if(e.target.id==='svRater'){const px=participants().find(x=>x.email===e.target.value);if(px&&px.partnerEmail)$('svPartner').value=px.partnerEmail;}
   if(e.target.dataset&&e.target.dataset.act==='pairweek'){pairWeekSel[e.target.dataset.p]=parseInt(e.target.value,10);renderMatching();}
 });
 
