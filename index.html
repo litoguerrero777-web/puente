@@ -243,7 +243,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
     <p style="max-width:68ch">A pilot cooperation between <b>ACAMC</b> (Facultad de Medicina, Universidad de Cartagena) and <b>SACNAS</b> (Baylor University) to build English proficiency for the ECFMG pathway — the OET Medicine exam and the USMLE Steps — through weekly one-to-one practice, <b>November 16 to December 10, 2026</b> — wrapping up right before Baylor finals.</p>
 
     <div class="card">
-      <h3>Getting started</h3>
+      <h3>Recording notice · Aviso de grabación</h3><p class="note" style="max-width:68ch">All PUENTE practice calls are one-to-one and are <b>recorded and transcribed automatically</b> for participant safety, quality and liability purposes. Recordings are stored in the PUENTE coordinator's Baylor Microsoft account and are used only for those purposes. By joining a call you consent to this recording; Teams shows a banner when it starts. / Todas las llamadas de práctica de PUENTE son individuales y se <b>graban y transcriben automáticamente</b> por seguridad, calidad y responsabilidad. Las grabaciones se guardan en la cuenta Microsoft de Baylor del coordinador de PUENTE y se usan solo para esos fines. Al unirte a una llamada aceptas esta grabación; Teams muestra un aviso cuando comienza.</p></div><div class="card"><h3>Getting started</h3>
       <ol class="stepList" style="margin-top:14px">
         <li><b>Choose your track.</b> Cartagena students pick <i>Clinical English</i> (OSCE-style patient encounters) or <i>Conversational English</i> (cultural exchange and everyday fluency). You keep the same track for the whole pilot.</li>
         <li><b>Register on the Partner Matching page.</b> Add your name and email under your school and track. Partners are <b>set for the full pilot</b> — no weekly rotation — so you build rapport and can track real progress.</li>
@@ -353,7 +353,7 @@ details.matDetails summary{cursor:pointer;font-weight:700;color:var(--green)}
     </div>
     <div class="card">
       <h3>Partnership links</h3>
-      <p class="note">Rooms run on Jitsi Meet: open your pair's link and you're in — the first person to arrive taps a quick moderator sign-in with any Google account, then the call starts. Works in any browser or the free Jitsi Meet phone app.</p>
+      <p class="note">Each partnership has its own Microsoft Teams room, used all four weeks: open your pair's link at your agreed time and join (no account needed — use your browser or the free Teams app). Calls start recording automatically. / Cada pareja tiene su propia sala de Microsoft Teams para las cuatro semanas: abre el enlace de tu pareja a la hora acordada y entra (sin cuenta; usa el navegador o la app gratuita de Teams). Las llamadas se graban automáticamente.</p>
       <div id="meetPairs"></div>
     </div>
   </div>
@@ -710,7 +710,7 @@ function renderMeet(){
   $('meetTable').innerHTML='<tr><th>Partnership</th><th>Status</th><th>When</th><th>Join</th></tr>'+(rows||'<tr><td colspan="4" class="note">No proposals for this week yet — agree on a slot on the Partner Matching page and confirmed meetings will appear here.</td></tr>');
   $('meetPairs').innerHTML=state.pairs.length?state.pairs.map(p=>`<div class="formRow" style="border-bottom:1px solid var(--border);padding:10px 0">
     <div style="flex:1 1 220px;font-weight:600">${esc((p.S||{}).name||'open seat')} ⇄ ${esc((p.A||{}).name||'open seat')}${p.track?' <span class="note">('+p.track+')</span>':''}</div>
-    <div class="field" style="flex:2 1 260px"><label>Room link (Jitsi or Google Meet)</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://meet.jit.si/PUENTE-..."></div>
+    <div class="field" style="flex:2 1 260px"><label>Room link (Jitsi or Google Meet)</label><input data-act="meetlink" data-p="${p.id}" value="${esc(p.meetLink||'')}" placeholder="https://teams.microsoft.com/meet/..."></div>
     <button class="btn small" data-act="savemeet" data-p="${p.id}">Save link</button>
     ${p.meetLink?`<a class="btn primary small" href="${esc(p.meetLink)}" target="_blank" rel="noopener">Join ▶</a>`:''}
   </div>`).join(''):'<div class="emptyBox">Partnerships created on the Matching page will appear here.</div>';
@@ -862,7 +862,7 @@ document.addEventListener('click',e=>{
     const st=pairStatus(p,w);
     put('pairs/'+p.id+'/weeks/'+w+'/'+r,{date,time},st==='green'?'Time confirmed — you match! ✓':'Proposal saved — waiting for your partner to match it');}
   if(act==='savemeet'&&p){const inp=document.querySelector(`input[data-act="meetlink"][data-p="${p.id}"]`);let v=inp.value.trim().slice(0,200);
-    if(v&&!/^https:\/\/(meet\.jit\.si|meet\.google\.com)\//.test(v)){toast('Use a Jitsi or Google Meet link (https://meet.jit.si/…)');return;}
+    if(v&&!/^https:\/\/(meet\.jit\.si|meet\.google\.com|teams\.microsoft\.com)\//.test(v)){toast('Use a Microsoft Teams, Jitsi or Google Meet link (https://teams.microsoft.com/…)');return;}
     put('pairs/'+p.id+'/meetLink',v,'Meet link saved ✓');}
   if(el.id==='fbPost'){const name=$('fbName').value.trim().slice(0,80),text=$('fbText').value.trim().slice(0,1000);
     if(!text){toast('Write a comment first');return;}
